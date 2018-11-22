@@ -1,0 +1,9 @@
+html body .is-error{
+	border:1px solid red;
+}
+html body .is-success{
+	border:1px solid green;
+}
+html body .msg-error{
+	color:red;
+}

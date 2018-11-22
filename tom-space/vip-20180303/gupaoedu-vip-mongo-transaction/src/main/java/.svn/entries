@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.172.166./svn/maven"
+   name=""
+   revision="25623"
+   last-author="xieguorun"
+   url="https://192.168.172.166./svn/maven/app-common-db-mongo/trunk/src/main/java"
+   uuid="6db7b590-3e44-574f-9c8d-43438cef6760"
+   committed-rev="18282"
+   kind="dir"
+   committed-date="2013-08-14T08:05:09.235903Z"/>
+<entry
+   name="com"
+   kind="dir"/>
+</wc-entries>

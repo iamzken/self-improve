@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-aop.iml" filepath="$PROJECT_DIR$/spring-aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-aspects.iml" filepath="$PROJECT_DIR$/spring-aspects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-beans.iml" filepath="$PROJECT_DIR$/spring-beans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-build-src.iml" filepath="$PROJECT_DIR$/spring-build-src.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context.iml" filepath="$PROJECT_DIR$/spring-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context-support.iml" filepath="$PROJECT_DIR$/spring-context-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-core.iml" filepath="$PROJECT_DIR$/spring-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-expression.iml" filepath="$PROJECT_DIR$/spring-expression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-framework-bom.iml" filepath="$PROJECT_DIR$/spring-framework-bom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-instrument.iml" filepath="$PROJECT_DIR$/spring-instrument.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-instrument-tomcat.iml" filepath="$PROJECT_DIR$/spring-instrument-tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jdbc.iml" filepath="$PROJECT_DIR$/spring-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-jms.iml" filepath="$PROJECT_DIR$/spring-jms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-orm.iml" filepath="$PROJECT_DIR$/spring-orm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-orm-hibernate4.iml" filepath="$PROJECT_DIR$/spring-orm-hibernate4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-oxm.iml" filepath="$PROJECT_DIR$/spring-oxm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-struts.iml" filepath="$PROJECT_DIR$/spring-struts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test.iml" filepath="$PROJECT_DIR$/spring-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test-mvc.iml" filepath="$PROJECT_DIR$/spring-test-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-tx.iml" filepath="$PROJECT_DIR$/spring-tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-web.iml" filepath="$PROJECT_DIR$/spring-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webmvc.iml" filepath="$PROJECT_DIR$/spring-webmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-webmvc-portlet.iml" filepath="$PROJECT_DIR$/spring-webmvc-portlet.iml" />
+    </modules>
+  </component>
+</project>

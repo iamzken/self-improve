@@ -1,0 +1,4 @@
+#Dubbo Registry Cache
+#Sat Sep 08 16:06:24 CST 2018
+com.gupaoedu.tcc.CapitalTradeOrderService=empty\://192.168.11.1\:20886/com.gupaoedu.tcc.CapitalTradeOrderService?anyhost\=true&application\=tcc-capital&category\=configurators&check\=false&default.proxy\=tccJavassist&dubbo\=2.5.3&interface\=com.gupaoedu.tcc.CapitalTradeOrderService&methods\=record&owner\=mic&payload\=52428800&pid\=140628&retries\=0&side\=provider&timeout\=60000&timestamp\=1536393975029
+com.gupaoedu.tcc.CapitalAccountService=empty\://192.168.11.1\:20886/com.gupaoedu.tcc.CapitalAccountService?anyhost\=true&application\=tcc-capital&category\=configurators&check\=false&default.proxy\=tccJavassist&dubbo\=2.5.3&interface\=com.gupaoedu.tcc.CapitalAccountService&methods\=getCapitalAccountByUserId&owner\=mic&payload\=52428800&pid\=140628&retries\=0&side\=provider&timeout\=60000&timestamp\=1536393984508

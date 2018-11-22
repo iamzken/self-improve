@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <util:properties id="tccJdbc" location="classpath:jdbc.properties"/>
+
+    <bean id="orderDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          destroy-method="close" lazy-init="false">
+        <property name="url" value="#{tccJdbc['datasource.order.url']}"/>
+        <property name="username" value="#{tccJdbc['datasource.order.username']}"/>
+        <property name="password" value="#{tccJdbc['datasource.order.password']}"/>
+        <property name="initialSize" value="#{tccJdbc['datasource.order.initialSize']}"/>
+        <property name="minIdle" value="#{tccJdbc['datasource.order.minIdle']}"/>
+        <property name="maxActive" value="#{tccJdbc['datasource.order.maxActive']}"/>
+        <property name="maxWait" value="#{tccJdbc['datasource.order.maxWait']}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="#{tccJdbc['datasource.order.timeBetweenEvictionRunsMillis']}"/>
+        <property name="minEvictableIdleTimeMillis" value="#{tccJdbc['datasource.order.minEvictableIdleTimeMillis']}"/>
+        <property name="validationQuery" value="#{tccJdbc['datasource.order.validationQuery']}"/>
+        <property name="testWhileIdle" value="#{tccJdbc['datasource.order.testWhileIdle']}"/>
+        <property name="testOnBorrow" value="#{tccJdbc['datasource.order.testOnBorrow']}"/>
+        <property name="testOnReturn" value="#{tccJdbc['datasource.order.testOnReturn']}"/>
+        <property name="poolPreparedStatements" value="#{tccJdbc['datasource.order.poolPreparedStatements']}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="#{tccJdbc['datasource.order.maxPoolPreparedStatementPerConnectionSize']}"/>
+        <property name="filters" value="#{tccJdbc['datasource.order.filters']}"/>
+    </bean>
+
+    <bean id="orderSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="orderDataSource" />
+        <property name="typeAliasesPackage"
+                  value="com.gupaoedu.tcc.dal.entity" />
+        <property name="mapperLocations" value="classpath*:com/gupaoedu/tcc/dal/persistence/*Mapper.xml" />
+    </bean>
+
+    <bean name="orderMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                  value="com.gupaoedu.tcc.dal.persistence" />
+        <property name="sqlSessionFactory" ref="orderSqlSessionFactory" />
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="orderDataSource"/>
+    </bean>
+
+    <context:annotation-config/>
+    <tx:annotation-driven/>
+
+</beans>

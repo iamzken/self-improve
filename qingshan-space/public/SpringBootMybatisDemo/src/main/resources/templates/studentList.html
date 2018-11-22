@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style type="text/css">
+        .layui-table-page {
+            position:fixed;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <title>学员列表</title>
+    <script>
+        function deleteUser(sid) {
+            alert(sid)
+        }
+    </script>
+
+</head>
+
+<body>
+<div style="text-align: center">
+    <h1>学员列表</h1>
+    <br/>
+    <table align="center" border="1px" cellspacing="0" width="400px" style="text-align: center">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>QQ</th>
+            <th colspan="2">操作</th>
+        </tr>
+        <tr th:each="student : ${studentList}">
+            <td th:text="${student.sid}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.qq}"></td>
+            <td>
+               <!-- <a th:href="@{/toEdit(id=${student.sid})}">修改</a>-->
+                <button type="button"  th:onclick="'javascript:updateStudent('+${student.sid}+')' ">修改</button>
+            </td>
+            <!--  <td><a th:href="@{/delete(id=${student.sid})}">删除</a></td>-->
+            <td>
+                <button type="button"  th:onclick="'javascript:deleteStudent('+${student.sid}+')' ">删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

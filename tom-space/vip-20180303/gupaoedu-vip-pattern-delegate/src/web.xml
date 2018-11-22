@@ -1,0 +1,11 @@
+<servlet>
+
+    <servlet-name>aaa</servlet-name>
+    <servlet-class>com.gupaoedu.XxxServlet</servlet-class>
+
+</servlet>
+
+<servlet-pattern>
+        <servlet-name>aaa</servlet-name>
+        <servlet-url>/web/xxx.do</servlet-url>
+</servlet-pattern>

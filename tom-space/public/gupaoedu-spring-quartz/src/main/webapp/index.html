@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>日志分析</title>
+	</head>
+	<body style="overflow: hidden;padding: 0px;margin: 0px;">
+		<div style="height:50px;line-height: 50px;">
+			<button id="refresh-task-btn">刷新任务列表</button>
+			<button id="refresh-console-btn">清空控制台</button>
+			<button id="task-manage-btn">任务管理</button>
+		</div>
+		<div style="width:100%;height:100%;">
+			<div id="task" style="width: 20%;height: 100%;overflow: hidden;overflow-y: auto;float: left;position: absolute;top: 50px;padding: 10px 0px;background: #ccc;">
+			</div>
+			<div id="console" style="background: #000;color: #fff;padding: 10px;width: 75%;height: 100%;overflow: hidden;overflow-y: auto;float: left;margin-left: 20%;position: absolute;top: 50px;">
+			
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/lib/jquery-1.8.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$("#console,#task").height(($(window).height() - 80) + "px");
+			$(window).resize(function(){
+				$("#console,#task").height(($(window).height() - 80) + "px");
+			});
+			
+			var refreshConsole = function(){
+				$.ajax({url:"/web/logs/getConsole.json",success:function(r){
+					
+					for(var i in r.data){
+						$("#console").append(r.data[i] + "<br/>");
+					}
+					
+				}});
+			};
+			var refreshTask = function(){
+				$.ajax({url:"/web/task/getPage.json",success:function(r){
+					
+					var task = '<ul>';
+					for(var i in r.data){
+						var p = r.data[i];
+						var ptitle = ("任务组：" + p.desc + "\n" +
+									  "类名:" + p.name);
+						task += ('<li data="' + JSON.stringify(p) + '"><a href="javascript:void(0);" ' + 
+								'title="' + ptitle + '" ' +
+								'>' + p.desc + '</a></li>');
+						task += ('<ul>');
+						for(var j in p.children){
+							var c = p.children[j];
+							var title = ("任务名称：" + c.desc + "\n" +
+										 "方法名:" + c.name + "\n" + 
+										 "表达式:" + c.cron + "\n" + 
+										 "表达式释义：" + c.cronDesc + "\n" +
+										 "已执行次数:" + c.execute);
+							task += ('<li title="' + title + '" data="' + JSON.stringify(c) + '"><a href="javascript:void(0);">' + c.desc + '</a></li>');
+						}
+						task += ('</ul>');
+					}
+					task += '</ul>';
+					$("#task").html(task);
+					$("#task")[0].scrollTop=$("#task")[0].scrollHeight;
+				}});
+			}
+			
+			refreshTask();
+			refreshConsole();
+			window.setInterval(function(){
+				refreshConsole();
+			},5000);
+			
+			$("#refresh-task-btn").click(function(){
+				refreshTask();
+			});
+			$("#refresh-console-btn").click(function(){
+				$("#console").html("");
+			});
+		});
+		
+	</script>
+</html>

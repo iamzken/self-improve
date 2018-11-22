@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gupaoedu.mapper.MerchantMapper" >
+
+    <resultMap id="BaseResultMap" type="com.gupaoedu.entity.Merchant" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="accountNo" property="accountNo" jdbcType="VARCHAR" />
+        <result column="accountName" property="accountName" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getMerchantList" resultMap="BaseResultMap"  >
+      SELECT id, name, address, accountNo, accountName,state FROM merchant WHERE  1=1
+        AND NAME LIKE concat(concat('%',#{0}),'%')
+        order by id
+       limit #{1},#{2}
+    </select>
+
+
+    <select id="getMerchantCount"   resultType="java.lang.Integer">
+        select count(id) count from merchant
+    </select>
+
+    <select id="getMerchantById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT * FROM merchant WHERE id = #{id}
+    </select>
+
+    <insert id="add" parameterType="com.gupaoedu.entity.Merchant" >
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO
+        merchant
+        (id, name, address, accountNo, accountName, state)
+        VALUES
+        (#{id}, #{name}, #{address}, #{accountNo}, #{accountName}, #{state})
+    </insert>
+
+    <update id="update" parameterType="com.gupaoedu.entity.Merchant" >
+        UPDATE
+        merchant
+        SET
+        name = #{name},address = #{address} ,accountNo = #{accountNo} ,accountName = #{accountName}, state = #{state}
+        WHERE
+        id = #{id}
+    </update>
+
+    <update id="updateState" parameterType="com.gupaoedu.entity.Merchant" >
+        UPDATE
+        merchant
+        SET state = #{state}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        DELETE FROM
+        merchant
+        WHERE
+        id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:reg="http://www.dangdang.com/schema/ddframe/reg"
+       xmlns:job="http://www.dangdang.com/schema/ddframe/job"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.dangdang.com/schema/ddframe/reg
+http://www.dangdang.com/schema/ddframe/reg/reg.xsd
+http://www.dangdang.com/schema/ddframe/job
+http://www.dangdang.com/schema/ddframe/job/job.xsd ">
+
+    <!--配置作业注册中心 -->
+    <reg:zookeeper id="regCenter" server-lists="${regcenter.zookeeper.server-lists}"
+                   namespace="${regcenter.zookeeper.namespace}"
+                   base-sleep-time-milliseconds="${regcenter.zookeeper.base.sleep.time.milliseconds}"
+                   max-sleep-time-milliseconds="${regcenter.zookeeper.max.sleep.time.milliseconds}"
+                   max-retries="${regcenter.zookeeper.max.retries}" />
+
+    <!-- Elastic-Job在数据库中的日志 -->
+    <bean id="elasticJobLog" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${spring.datasource.driver-class-name}"/>
+        <property name="url" value="${spring.datasource.url}"/>
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+    </bean>
+
+    <!-- 第一个Elastic-Job分片定时任务 -->
+    <job:simple id="mySimpleJob" class="com.gupaoedu.job.MySimpleJob" registry-center-ref="regCenter"
+                cron="${simplejob.cron}"
+                sharding-total-count="${simplejob.shardingTotalCount}"
+                sharding-item-parameters="${simplejob.shardingItemParameters}"
+                description="咕泡-简单作业" overwrite="true" event-trace-rdb-data-source="elasticJobLog"
+                job-exception-handler="com.gupaoedu.exception.CustomJobExceptionHandler"/>
+</beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <util:properties id="tccJdbc" location="classpath:jdbc.properties"/>
+
+    <bean id="capitalDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          destroy-method="close" lazy-init="false">
+        <property name="url" value="#{tccJdbc['datasource.capital.url']}"/>
+        <property name="username" value="#{tccJdbc['datasource.capital.username']}"/>
+        <property name="password" value="#{tccJdbc['datasource.capital.password']}"/>
+        <property name="initialSize" value="#{tccJdbc['datasource.capital.initialSize']}"/>
+        <property name="minIdle" value="#{tccJdbc['datasource.capital.minIdle']}"/>
+        <property name="maxActive" value="#{tccJdbc['datasource.capital.maxActive']}"/>
+        <property name="maxWait" value="#{tccJdbc['datasource.capital.maxWait']}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="#{tccJdbc['datasource.capital.timeBetweenEvictionRunsMillis']}"/>
+        <property name="minEvictableIdleTimeMillis" value="#{tccJdbc['datasource.capital.minEvictableIdleTimeMillis']}"/>
+        <property name="validationQuery" value="#{tccJdbc['datasource.capital.validationQuery']}"/>
+        <property name="testWhileIdle" value="#{tccJdbc['datasource.capital.testWhileIdle']}"/>
+        <property name="testOnBorrow" value="#{tccJdbc['datasource.capital.testOnBorrow']}"/>
+        <property name="testOnReturn" value="#{tccJdbc['datasource.capital.testOnReturn']}"/>
+        <property name="poolPreparedStatements" value="#{tccJdbc['datasource.capital.poolPreparedStatements']}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="#{tccJdbc['datasource.capital.maxPoolPreparedStatementPerConnectionSize']}"/>
+        <property name="filters" value="#{tccJdbc['datasource.capital.filters']}"/>
+    </bean>
+
+    <bean id="capitalSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="capitalDataSource" />
+        <property name="typeAliasesPackage"
+                  value="com.gupaoedu.tcc.dal.entity" />
+        <property name="mapperLocations" value="classpath*:com/gupaoedu/tcc/dal/persistence/*Mapper.xml" />
+    </bean>
+
+    <bean name="capitalMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                  value="com.gupaoedu.tcc.dal.persistence" />
+        <property name="sqlSessionFactory" ref="capitalSqlSessionFactory" />
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="capitalDataSource"/>
+    </bean>
+
+    <context:annotation-config/>
+    <tx:annotation-driven/>
+
+</beans>

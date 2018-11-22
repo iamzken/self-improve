@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>咕泡学院-电子名片生成演示</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/animate.min.css"/>
+		
+		<script type="text/javascript" charset="utf-8" src="/js/jquery-2.0.3.min.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="/js/bootstrap.min.js"> </script>
+		
+		<script type="text/javascript" charset="utf-8" src="/js/qrcode.util.js"></script>
+		<style type="text/css">
+			html{
+				padding:0px;margin:0px;
+				background-color: #012c45;
+			}
+			body {
+				padding: 0px 50px;
+				background: url("world.png") no-repeat;
+				background-size:100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			body *{
+				color:#fff;
+			}
+			
+			.left{
+				height: 300px;
+				width: 520px;
+				float: left;
+			}
+			.right{
+				height: 255px;
+				width: 250px;
+				float: left;
+				padding: 7px;
+				background: url("qr-bg.png") no-repeat;
+				background-size:100%;
+				margin-top: 0px;
+			}
+			.tips{
+				font-size:18px;
+				width:100%;
+				text-align: center;
+				margin-top:18px;
+			}
+			.qrcode{
+				width:230px;
+				height:230px;
+			}
+			.qrcode iframe{
+				width: 100%;
+				height: 100%;
+				border: 0px;
+				overflow: hidden;
+			}
+			input{
+				width: 300px;
+			}
+			.main{
+				width: 840px;
+				margin: 100px auto;
+				border-radius: 20px;
+				padding:10px 35px;
+				height:430px;
+			}
+			.form-box-bg{
+				filter:alpha(Opacity=10);-moz-opacity:0.1;opacity: 0.1;
+				width: 840px;
+				border-radius: 20px;
+				background: #02d9f8;
+				height:430px;
+				position: absolute;
+			}
+			
+			.form-box{
+				width: 840px;
+				border-radius: 20px;
+				padding:10px 35px;
+				height:430px;
+				position: absolute;
+			}
+			.form-box h1{
+				text-align: center;
+			}
+			
+			.form-group {
+			    margin-bottom: 5px;
+			    line-height: 35px;
+			    height: 35px;
+			}
+			.form-control{
+				background: #4f6d7e;
+				color: #fff;
+			}
+			
+			.copyright{
+				color: #afb4b7;
+				font-size: 16px;
+				padding-left: 90px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="main">
+			<div class="form-box-bg"></div>
+			<div class="form-box">
+				<h1>咕泡学院在线生成二维码电子名片演示</h1>
+				<div class="left">
+					<form target="qrcode" action="qrcode.file" id="qrcodeFrm" method="post">
+						<div class="form-group">
+						    <label for="name" class="col-sm-2 control-label">姓名:</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="tel" class="col-sm-2 control-label">电话：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="tel"  name="tel" placeholder="请输入电话">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="org" class="col-sm-2 control-label">单位：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="org" name="org" placeholder="请输入单位">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="email" class="col-sm-2 control-label">邮箱：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="email" name="email" placeholder="请输入邮箱">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="site" class="col-sm-2 control-label">网址：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="site" name="site" placeholder="请输入网址">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="addr" class="col-sm-2 control-label">地址：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="addr" name="addr" placeholder="请输入博客">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="note" class="col-sm-2 control-label">座右铭：</label>
+						    <div class="col-sm-10">
+						    	<input type="text" class="form-control" id="note" name="note" placeholder="请输入座右铭">
+						    </div>
+					  	</div>
+					  	
+						<div class="form-group">
+							<a href="javascript:void(0);" class="btn btn-primary gen-btn">开始生成</a>
+							<span class="copyright">主讲：咕泡学院-Tom老师&nbsp;&nbsp;交流QQ:441221062</span>
+						</div>
+					</form>
+				</div>
+				<div class="right">
+					<div class="qrcode">
+						<iframe id="qrcode" name="qrcode" src="qrcode.gif" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div class="tips">扫一扫，获取电子名片</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	
+	<script type="text/javascript">
+		var pageScroll = 0;
+		window.onscroll = function() {
+			pageScroll++;
+			scrollTo(0, 0);
+			if (pageScroll > 100) { //每当玩家滚动页面滚动条100次提醒
+				pageScroll = 0;
+			}
+		}
+	</script>
+
+
+</html>

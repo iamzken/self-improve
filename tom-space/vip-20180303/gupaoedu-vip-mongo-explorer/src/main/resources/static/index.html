@@ -1,0 +1,51 @@
+<!--user login-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden;">
+<head>
+	<script type="text/javascript">	
+		if(window.top != window.self){
+			window.top.location.href = window.location.href;
+		}
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>咕泡学院自研VIP云盘 - Powered by Gupao</title>
+	<link href="/css/bootstrap.css?ver=2.0" rel="stylesheet"/>
+	<link href="/css/font-awesome/css/font-awesome.css" rel="stylesheet" >
+	<!-- 字体不能跨域问题 -->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome-ie7.css">
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body>
+	<div class="background"></div>	<div class="loginbox" >
+		<div class="title">
+			<div class="logo"><i class="icon-cloud"></i><span class="text">咕泡学院VIP云盘</span><span>  v1.0</span></div>
+			<div class='info'>————咕泡学院，只为更好的你！</div>
+		</div>
+		<div class="form">
+			<form action="/system/login.json?iframe=1&callback=loginSuccess" method="post" target="ajaxResult">
+				<input id="jumpto" name='jumpto' type="hidden" value="/explorer.html"/>
+				<div class="inputs">
+					<div><span>用户名：</span><input id="loginName" name='loginName' type="text" placeholder="用户名" required/> </div> 
+					<div><span>密码：</span><input id="loginPass" name='loginPass' type="password" placeholder="密码" required /></div>
+	            </div>
+				<div class="actions">
+					<input type="submit" id="submit" value="登录 " />
+					<input type="checkbox" class="checkbox" name="rember_password" id='rm' checked='checked' />
+					<label for='rm'>记住密码</label>				
+				</div>
+				<div class="msg"></div>
+				<div style="clear:both;"></div>
+			</form>
+		</div>
+	</div>
+	<IFRAME style="display: none" id="ajaxResult" name="ajaxResult"></IFRAME>
+<div class="common_footer copyright">Powered by Gupao v1.0 | Copyright © <a href="http://www.gupaoedu.com/" target="_blank" class="domain">gupaoedu.com</a> All rights reserved.</div>
+<script src="/js/lib/jquery-1.8.0.min.js"></script>
+<script src="/js/lib/jquery.query-2.1.7.js"></script>
+<script src="/js/browser.support.js"></script>
+<script src="/js/login.util.js"></script>
+</body>
+</html>

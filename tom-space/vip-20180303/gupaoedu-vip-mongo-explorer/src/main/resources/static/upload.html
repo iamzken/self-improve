@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-attachment: fixed;">
+	<head>
+	    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	    <title>文件上传</title>
+	    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap/css/bootstrap.min.css"/>
+	    <link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css"/>
+	</head>
+	<body style="overflow: hidden; cursor: auto;">
+		
+		<form id="uploadform" target="hiddenFrame"  method="post" enctype="multipart/form-data">
+	       	<ul class="nav nav-tabs nav-justified">
+			  <li class="active"><a>本地上传</a></li>
+			  <li><a>网盘选择</a></li>
+			  <li><a>网络地址</a></li>
+			</ul>
+			<div class="tab-content">
+			   <div class="tab-pane active">
+	              <div class="progress" style="width:440px">
+	                <div class="progress-bar" style="width: 0%;background: #3399FF;"><span></span></div>
+	              </div>
+	              <div style="top: 52px; right: 8px; position: absolute">
+	                <input id="upload" type="file" name="upload" class="filestyle" data-input="false" data-buttonText="选择文件" required="" autocomplete="off" style="width:63px;"/>
+	              </div>
+	           </div>
+	           <div class="tab-pane active" style="display:none;">
+		            <input name="url"/>
+	           </div>
+	      </div>
+	      <div class="modal-footer">
+	          <button type="button" id="uploadBtn" class="btn btn-default">开始上传</button>
+	      </div>
+	    </form>
+	
+		<iframe id="hiddenFrame" name="hiddenFrame" style="display: none"></iframe>
+		<form id="downForm" target="hiddenFrame" method="post" style="display: none"></form>
+		<script type="text/javascript" src="/js/lib/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="/js/lib/jquery.query-2.1.7.js"></script>
+		<script type="text/javascript" src="/js/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/util.js"></script>
+		<script type="text/javascript" src="/js/upload.util.js"></script>
+		
+	</body>
+</html>

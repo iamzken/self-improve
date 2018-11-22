@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <script>
+        function deleteUser(id) {
+            alert(id)
+        }
+    </script>
+
+</head>
+
+<body>
+<div style="text-align: center">
+    <h1>用户列表</h1>
+    <br/>
+    <table align="center" border="1px" cellspacing="0" width="400px" style="text-align: center">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th colspan="2">操作</th>
+        </tr>
+        <tr th:each="user : ${userList}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td>
+               <!-- <a th:href="@{/toEdit(id=${user.id})}">修改</a>-->
+                <button type="button"  th:onclick="'javascript:updateUser('+${user.id}+')' ">修改</button>
+            </td>
+            <!--  <td><a th:href="@{/delete(id=${user.id})}">删除</a></td>-->
+            <td>
+                <button type="button"  th:onclick="'javascript:deleteUser('+${user.id}+')' ">删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

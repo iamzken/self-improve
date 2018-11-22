@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="rebulidIndexTimer" class="com.d3sq.search.timer.RebuildIndexTimer"></bean>
+	
+	<bean id="rebulidIndexTask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="rebulidIndexTimer" />
+		</property>
+		<property name="targetMethod">
+			<value>execute</value>
+		</property>
+	</bean>
+	
+	<bean id="rebulidIndexTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail">
+			<ref bean="rebulidIndexTask" />
+		</property>
+		<property name="cronExpression">
+			<value>0 */2 * * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="startQuertz" lazy-init="false" autowire="no"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="rebulidIndexTrigger" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

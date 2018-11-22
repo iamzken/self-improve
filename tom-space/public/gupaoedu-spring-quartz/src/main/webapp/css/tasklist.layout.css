@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+*{margin:0;padding:0;outline:none;}
+html body {line-height: 1; font-family:"Microsoft Yahei";font-size:14px;}
+ol,ul,li{list-style: none;}
+input,a:focus{outline:none;}
+table {border-collapse: collapse;border-spacing: 0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*zoom:1;}
+body .pagination{margin:0px;}
+.hoverlayer{position:absolute;padding:15px;background-color:#fff;display:none;border:1px solid #ddd; z-index:100;}
+.showLog{position:absolute;padding:15px;background-color:#fff;display:none;border:1px solid #ddd; z-index:101;}

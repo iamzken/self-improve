@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="imall" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="customer" primaryKey="id" dataNode="dn1,dn2,dn3" rule="auto-sharding-long" />
+		<table name="order_info" dataNode="dn1,dn2,dn3" rule="mod-long-order" >
+    			<childTable name="order_detail" primaryKey="id" joinKey="order_id" parentKey="order_id"/>
+		</table>
+	</schema>
+	
+        <schema name="gupao" checkSQLschema="false" sqlMaxLimit="100">
+                <table name="student" primaryKey="sid" dataNode="dn4,dn5,dn6" rule="mod-long" />
+        </schema>
+
+	<dataNode name="dn1" dataHost="localhost1" database="imall" />
+	<dataNode name="dn2" dataHost="localhost2" database="imall" />
+	<dataNode name="dn3" dataHost="localhost3" database="imall" />
+
+        <dataNode name="dn4" dataHost="localhost1" database="gupao" />
+        <dataNode name="dn5" dataHost="localhost2" database="gupao" />
+        <dataNode name="dn6" dataHost="localhost3" database="gupao" />
+	
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="hostM1" url="192.168.8.168:3306" user="root"
+				   password="123456">
+		</writeHost>
+	</dataHost>
+
+	<dataHost name="localhost2" maxCon="1000" minCon="10" balance="0"
+                          writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+                <heartbeat>select user()</heartbeat>
+                <writeHost host="hostM1" url="192.168.8.154:3306" user="root"
+                                   password="123456">
+			<!-- <readHost host="hostS1"></readHost>  -->
+		</writeHost>
+	</dataHost>
+
+        <dataHost name="localhost3" maxCon="1000" minCon="10" balance="0"
+                          writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+                <heartbeat>select user()</heartbeat>
+                <writeHost host="hostM1" url="192.168.8.34:3306" user="root"
+                                   password="123456">
+		</writeHost>
+        </dataHost>
+</mycat:schema>

@@ -1,0 +1,452 @@
+<html>
+<head>
+
+<title>HTTP接口文档</title>
+<meta charset="utf-8"/>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+.red {
+	color: #f00;
+}
+
+body {
+	min-width: 1000px;
+}
+
+.content {
+	background: #fff;
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	_position: absolute;
+	_top: expression(offsetParent.scrollTop +20);
+	_left: expression(offsetParent.width);
+	z-index: 2000;
+	border: 1px solid #d7d7d7;
+	width: 200px;
+	padding-bottom: 10px;
+}
+
+.content .content-title h1 {
+	font-size: 14px;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 10px;
+}
+
+.content .content-body {
+	padding-left: 20px;
+	overflow: auto;
+}
+
+.content .content-body li {
+	list-style: none;
+	height: 26px;
+	line-height: 26px;
+}
+
+.content .content-body li a {
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.content .content-body li a:hover {
+	text-decoration: underline;
+}
+
+.box {
+	padding-left: 20px;
+	width: 80%;
+}
+
+.box-title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #555;
+	height: 36px;
+	line-height: 36px;
+	border-bottom: 1px solid #d0dfed
+}
+
+.box-notice {
+	padding-bottom: 20px;
+}
+
+.notice-title {
+	height: 24px;
+	line-height: 24px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.notice-body {
+	padding-left: 24px;
+	line-height:22px;
+}
+
+.notice-body li {
+	list-style-type: square;
+}
+
+.interface-title {
+	height: 34px;
+	line-height: 34px;
+	background: #f6faff;
+	border: 1px solid #becfdd;
+	color: #333;
+	padding-left: 10px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.item-tt {
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+}
+
+.item-tt span {
+	color: #0455CA;
+	font-size: 14px;
+	font-weight: bold;
+	background: #fff;
+	position: relative;
+	background: #fff;
+	z-index: 21;
+	padding: 0px 10px;
+}
+
+.item-tt span.line {
+	border-bottom: 1px dashed #666;
+	display: block;
+	position: relative;
+	top: -15px;
+	z-index: 20;
+}
+
+.item-bd {
+	padding-left: 30px;
+}
+
+.item-bd ul li {
+	list-style: none;
+	height: 24px;
+	line-height: 24px;
+}
+
+.item-lft,.item-rt {
+	float: left;
+	line-height: 24px;
+	margin: 10px 0px;
+}
+
+.item-lft {
+	clear: both;
+	width: 140px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.item-rt {
+	margin-left: 20px;
+	width: 70%;
+	padding-left: 10px;
+}
+
+.code {
+	border: 1px dashed #999;
+	background: #fafafa;
+	color: #555;
+	font-family: "Courier New";
+	margin-left: 30px;
+	width: 69%;
+	padding-right: 5px;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.code.demo{
+	background: #e0edfc;
+    border: 1px dashed #80bafc;
+}
+
+.code.success{
+	background: #f4fcfa;
+    border: 1px dashed #6dc16c;
+}
+
+.code.error{
+	background: #fceded;
+    border: 1px dashed #fcb3b3;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #EDECEC;
+}
+
+table th,table td {
+	border: 1px solid #EDECEC
+}
+
+table th {
+	line-height: 30px;
+	background: #f8f8f8;
+	padding-left: 10px;
+    text-align: left;
+}
+
+table td {
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+table tr.odd {
+	background: #fbfbfb
+}
+
+.interface-item {
+	clear: both;
+}
+.demolist li{float:left;margin:0px 10px;}
+</style>
+
+</head>
+
+<body style="position:relative;">
+	<div class="content">
+		<div class="content-title">
+			<h1>目录</h1>
+		</div>
+		<ul class="content-body"></ul>
+	</div>
+	<div class="box">
+		<div class="box-title">HTTP接口文档</div>
+		<div class="box-notice">
+			<div class="red notice-title">版本更新</div>
+			<ul class="notice-body">
+				<li>2016.8.29创建接口文档v1.0版本</li>
+			</ul>
+		</div>
+		<div class="interface">
+			<div class="interface-item">
+				<div class="item-tt">
+					<span>公共状态码说明</span> <span class="line"></span>
+				</div>
+				<div class="item-bd">
+					<table width='100%'>
+						<tr>
+							<th width='15%'>状态值</th>
+							<th width='85%'>描述</th>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>服务器内部异常</td>
+						</tr>
+						<tr class="odd">
+							<td>1</td>
+							<td>返回结果正常</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>返回结果失败</td>
+						</tr>
+						<tr class="odd">
+							<td>3</td>
+							<td>请求超时</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>不允许访问的接口</td>
+						</tr>
+						<tr class="odd">
+							<td>9</td>
+							<td>请求参数错误</td>
+						</tr>
+						<tr>
+							<td>98</td>
+							<td>未授权不允许访问</td>
+						</tr>
+						<tr class="odd">
+							<td>99</td>
+							<td>未登录</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="interface-item">
+				<div class="item-tt">
+					<span>返回结果说明</span> <span class="line"></span>
+				</div>
+				<div class="item-bd">
+					<table width='100%'>
+						<tr>
+							<th width='15%'>字段名称</th>
+							<th width='15%'>字段类型</th>
+							<th width='20%'>说明</th>
+							<th width='50%'>示例</th>
+						</tr>
+						<tr>
+							<td>status</td>
+							<td>数字</td>
+							<td>状态码</td>
+							<td>在上述状态码表中取值,也可以自定义其他值</td>
+						</tr>
+						<tr class="odd">
+							<td>msg</td>
+							<td>字符串</td>
+							<td>提示信息</td>
+							<td>说明消息内容：如”修改成功”。可根据多语言自动切换</td>
+						</tr>
+						<tr>
+							<td>data</td>
+							<td>JSON</td>
+							<td>返回结果</td>
+							<td>返回结果，可为任意JSON对象</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div style='clear:both;margin-bottom:20px;'></div>
+			
+		</div>
+	</div>
+</body>
+
+		<script type="text/template" id="interfaceItem">
+			<div class='interface-item'>
+				<div class='item-tt' id='{0}'>
+					<span class='title'></span> <span class='line'></span>
+				</div>
+				<div class='item-bd'>
+					<div class='item-lft'>作者</div>
+					<div class='item-rt author'></div>
+					<div class='item-lft'>最后发布日期</div>
+					<div class='item-rt createtime'></div>
+					<div class='item-lft'>功能描述</div>
+					<div class='item-rt desc'></div>
+					<div class='item-lft'>是否验证授权码</div>
+					<div class='item-rt checkEnc'>是</div>
+					<div class='item-lft'>是否验证调用者IP</div>
+					<div class='item-rt checkIp'>否</div>
+					<div class='item-lft'>是否验证产品版本</div>
+					<div class='item-rt checkVersion'>否</div>
+					<div class='item-lft'>HTTP请求方式</div>
+					<div class='item-rt method'>GET/POST</div>
+					<div class='item-lft'>请求URL</div>
+					<div class='item-rt code url'></div>
+					<div class='item-lft'>请求参数</div>
+					<div class='item-rt params'>
+						<table width='100%'>
+							<tr>
+								<th width='15%'>参数名称</th>
+								<th width='10%'>类型</th>
+								<th width='10%'>必填</th>
+								<th width='10%'>默认值</th>
+								<th width='55%'>描述</th>
+							</tr>
+						</table>
+					</div>
+					<div class='item-lft'>返回结果说明</div>
+					<div class='item-rt returns'>
+						<table width='100%'>
+							<tr>
+								<th width='25%'>参数名称</th>
+								<th width='20%'>类型</th>
+								<th width='55%'>描述</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/template" id="catalogItem">
+			<li><a href='{0}'>{1}</a></li>
+		</script>
+		
+		<script type="text/template" id="interfaceTitleItem">
+			<div id='{0}' class='interface-title'>{1}</div>
+		</script>
+		
+		<script type="text/template" id="demoDetailItem">
+			<div>详情请参看返回结果示例</div>
+		</script>
+		
+		<script type="text/template" id="demoItem">
+			<div class='item-lft'>请求示例</div>
+			<div class='item-rt code demo'>{0}</div>
+		</script>
+		<script type="text/template" id="successItem">
+			<div class='item-lft'>返回成功示例</div>
+			<div class='item-rt code success'>{0}</div>
+		</script>
+		<script type="text/template" id="errorItem">
+			<div class='item-lft'>返回失败示例</div>
+			<div class='item-rt code error'>{0}</div>
+		</script>
+		
+		
+		
+		<script type="text/template" id="paramItem">
+			<tr class='{0}'>
+				<td>{1}</td>
+				<td>{2}</td>
+				<td>{3}</td>
+				<td>{4}</td>
+				<td>{5}</td>
+			</tr>
+		</script>
+		
+		<script type="text/template" id="returnItem">
+			<tr class="{0}">
+				<td class='return-name'>{1}</td>
+				<td class='return-type'>{2}</td>
+				<td class='return-desc'>{3}</td>
+			</tr>
+		</script>
+		
+		<script type="text/javascript">
+            function getStyle(obj, attr)
+            {
+                if(obj.currentStyle)
+                {
+                    return obj.currentStyle[attr];  //只适用于IE
+                }
+                else
+                {
+                    return getComputedStyle(obj,false)[attr];   //只适用于FF,Chrome,Safa
+                }
+                return obj.style[attr]; //本人测试在IE和FF下没有用,chrome有用
+            }
+
+            function calheight(){
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;   //height
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;      //width
+                var content=document.getElementsByClassName("content")[0];
+                var contentbody=content.getElementsByClassName("content-body")[0];
+                if(parseInt(getStyle(content,"height"))+50>=h){
+                    content.style.height=(h-50)+"px";
+                    contentbody.style.height=(h-80)+"px";
+                }else{
+                    content.style.height="auto";
+                    contentbody.style.height="auto";
+                }
+            }
+            window.onresize=function(){
+                calheight();
+            }
+            window.onload=function(){
+                calheight();
+            }
+		</script>
+
+</html>

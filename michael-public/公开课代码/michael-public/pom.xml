@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.gupao.course.demo</groupId>
+  <artifactId>michael-public</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>chapter-0509</module>
+      <module>chapter-0512</module>
+      <module>chapter-0516</module>
+      <module>chapter-0520</module>
+      <module>chapter-0523</module>
+      <module>chapter-0601</module>
+      <module>chapter-0713</module>
+      <module>chapter-0903</module>
+      <module>chapter-0913</module>
+      <module>chapter-1012</module>
+      <module>chapter-1104</module>
+      <module>chapter-1109</module>
+      <module>chapter-1113</module>
+      <module>chapter-1219</module>
+      <module>chapter-1223</module>
+      <module>chapter-0102</module>
+      <module>chapter-0108</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>michael-public</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>gp-workbench</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

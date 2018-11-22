@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gupaoedu.mapper.UserMapper" >
+
+    <resultMap id="BaseResultMap" type="com.gupaoedu.entity.User" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <id column="account" property="account" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="getUserList" resultMap="BaseResultMap"  >
+      SELECT * FROM user WHERE  1=1
+        AND NAME LIKE concat(concat('%',#{0}),'%')
+       limit #{1},#{2}
+    </select>
+
+    <select id="getAllUser" resultMap="BaseResultMap"  >
+        SELECT * FROM user WHERE  1=1
+    </select>
+
+    <select id="getUserByAccount" resultMap="BaseResultMap"  >
+        SELECT * FROM user WHERE  1=1
+        AND account = #{account}
+    </select>
+
+    <select id="getUserCount"   resultType="java.lang.Integer">
+        select count(id) count from user
+    </select>
+
+
+    <select id="getUserById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <insert id="add" parameterType="com.gupaoedu.entity.User" >
+        INSERT INTO
+        user
+        (name,age,account)
+        VALUES
+        (#{name}, #{age},#{account})
+    </insert>
+
+    <update id="update" parameterType="com.gupaoedu.entity.User" >
+        UPDATE
+        user
+        SET
+        name = #{name},age = #{age}, account = #{account})
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        DELETE FROM
+        user
+        WHERE
+        id = #{id}
+    </delete>
+</mapper>

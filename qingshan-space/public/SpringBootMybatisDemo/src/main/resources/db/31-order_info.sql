@@ -1,0 +1,3 @@
+INSERT INTO `order_info` (`order_id`, `uid`, `nums`, `state`, `create_time`, `update_time`) VALUES (1, 1000001, 1, 2, '2018-8-23 14:35:37', '2018-8-23 14:35:37');
+INSERT INTO `order_info` (`order_id`, `uid`, `nums`, `state`, `create_time`, `update_time`) VALUES (2, 1000002, 1, 2, '2018-8-24 14:35:37', '2018-8-24 14:35:37');
+INSERT INTO `order_info` (`order_id`, `uid`, `nums`, `state`, `create_time`, `update_time`) VALUES (3, 1000003, 3, 1, '2018-8-25 11:35:49', '2018-8-25 11:35:49');

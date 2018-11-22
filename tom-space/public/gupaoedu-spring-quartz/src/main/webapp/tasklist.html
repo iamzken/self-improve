@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>任务管理</title>
+	<meta charset="utf-8">
+	 <!-- <link href="/css/bootstrap.support.min.css" rel="stylesheet" type="text/css" /> -->
+	<link href="css/tasklist.layout.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="taskBody" style="display:none;">
+  		<div class="cont">
+  			<div class="datasbox">
+			<h2 style="text-align:center;">任务管理</h2>
+			<div class="table-toolbar clearfix" style="padding-left:5px;padding-bottom:26px;">
+				<div class="btn-group pull-left col-sm-6 col-xs-12  form-inline" style="padding-left: 0px;">
+					<div class="buttons-preview" >
+						<div class="btn btn-primary" onclick="restartAllTask();"><i class="fa fa-refresh"></i>
+							重启所有任务
+						</div>
+						&nbsp;&nbsp;
+						<div class="btn btn-success add" data-toggle="modal" data-target="#addTask"><i class="fa fa-plus"></i>
+							创建新任务
+						</div>
+						&nbsp;&nbsp;
+						<a style="display:none;" class="btn btn-danger piliangDel" href="javascript:void(0);" > <i class="fa fa-trash-o"></i> 
+							批量删除
+						</a>
+					</div>
+				</div>
+				<div class="btn-group pull-right col-sm-6 col-xs-12" style="text-align:right;padding-right: 0px;"></div>
+			</div>
+			<div id="dataGrid-box" style="padding-left:5px;padding-right:5px;"></div>
+			<div id="pagition" style="margin-top:20px;padding-left:56px;padding-right:56px;"></div>
+			<div class="hoverlayer"></div>
+			<div class="showLog" id="showLog"></div>
+		</div>
+  		</div>
+  		
+  		<input type="hidden" id="allTasks">
+  		
+<!-- 模态框（showLog） -->
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	<div class="modal-dialog" id="logDialog">
+		<div class="modal-content" id="logContent">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					日志信息
+				</h4><br>
+				<div>
+					<span onclick="logShow('error')" class="btn btn-danger btn-sm">error</span>&nbsp;
+					<span onclick="logShow('info')" class="btn btn-info btn-sm">info</span>&nbsp;
+				</div>
+			</div>
+				<textarea id="logError" class="modal-body form-control" style="overflow-y:auto;" readonly="readonly"></textarea>
+				<textarea id="logInfo" class="modal-body form-control" style="display:none;overflow-y:auto;" readonly="readonly"></textarea>
+			<div class="modal-footer" >
+				<span id="errorSpan" style="padding-right:100px;">
+					<button type="button" id="errorPrev" onclick="pageErrorLog(this,'errorPrev');" value="0" class="btn btn-default" >上一页</button>	&nbsp;&nbsp;
+					<button type="button" id="errorNext" onclick="pageErrorLog(this,'errorNext');" value="0" class="btn btn-default" >下一页</button>
+				</span>
+				<span id="infoSpan" style="padding-right:100px;display:none;">
+					<button type="button" id="infoPrev" onclick="pageInfoLog(this,'infoPrev');" value="0" class="btn btn-default" >上一页</button>	&nbsp;&nbsp;
+					<button type="button" id="infoNext" onclick="pageInfoLog(this,'infoNext');" value="0" class="btn btn-default" >下一页</button>
+				</span>
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				<input type="hidden" id="currTaskId">
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<!-- 模态框（addTask） -->
+<div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" id="addTaskDialog"  >
+		<div class="modal-content" id="addTaskContent" >
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					创建新任务
+				</h4>
+			</div>
+		<iframe class="modal-body" scrolling="yes" id="includeFrame" frameborder="no" border="0" src="addtask_for_inner.html" ></iframe> 
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+		<script src="js/lib/jquery-1.8.0.min.js"></script>
+	    <script src="js/lib/eui/eui.js"></script>
+	    <script src="js/common.tools.js"></script>
+  		<script src="js/tasklist.util.js"></script> 
+  		<script src="js/bootstrap-select.js"></script>
+  		
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商户详情查看</title>
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{/layui/layui.js}"></script>
+</head>
+
+<body>
+   <form class="layui-form"  th:action="@{/edit}" th:object="${merchant}"  method="post">
+       <div class="layui-form-item" style="margin-top: 20px;">
+           <label class="layui-form-label">商户号：</label>
+           <div class="layui-input-block">
+               <input type="text" name="id" id="id"  th:value="*{id}" style="width: 400px;"  class="layui-input"  disabled="true" >
+           </div>
+       </div>
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <label class="layui-form-label">商户名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name"  th:value="*{name}" style="width: 400px;"  class="layui-input"  disabled="true" >
+            </div>
+        </div>
+       <div class="layui-form-item">
+           <label class="layui-form-label">地址：</label>
+           <div class="layui-input-block">
+               <input type="text" name="address" id="address"  th:value="*{address}" style="width: 400px;" class="layui-input" disabled="true">
+           </div>
+       </div>
+       <div class="layui-form-item" style="margin-top: 20px;">
+           <label class="layui-form-label">账号：</label>
+           <div class="layui-input-block">
+               <input type="text" name="accountNo" id="accountNo"  th:value="*{accountNo}" style="width: 400px;"  class="layui-input"  disabled="true" >
+           </div>
+       </div>
+       <div class="layui-form-item">
+           <label class="layui-form-label">户名：</label>
+           <div class="layui-input-block">
+               <input type="text" name="accountName" id="accountName"  th:value="*{accountName}" style="width: 400px;" class="layui-input" disabled="true">
+           </div>
+       </div>
+
+    </form>
+
+</body>
+</html>

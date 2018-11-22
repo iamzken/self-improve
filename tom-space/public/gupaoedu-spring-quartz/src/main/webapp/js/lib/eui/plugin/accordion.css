@@ -1,0 +1,8 @@
+.page-sidebar.sidebar-fixed:before{ position:absolute  ! important; height:100%  ! important;top:0 !important;}
+body .page-sidebar.sidebar-fixed{position:absolute; overflow-y:auto;overflow-x:hidden;}
+.page-sidebar:before{position:absolute  ! important;}
+.page-sidebar .sidebar-menu .subcontent{display:none; z-index:1;position:relative; padding-left:35px;padding-top:15px;}
+.page-sidebar .sidebar-menu li.open>.subcontent{
+	display: block!important
+}
+.page-container .page-sidebar{float:left;position:relative;}

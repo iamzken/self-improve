@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+  	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://activemq.apache.org/schema/core
+    http://activemq.apache.org/schema/core/activemq-core.xsd
+    http://www.springframework.org/schema/jms
+    http://www.springframework.org/schema/jms/spring-jms.xsd">
+
+    <amq:connectionFactory id="amqConnectionFactory"
+                           brokerURL="tcp://localhost:61616" userName="admin" password="admin"/>
+
+    <!-- Spring 缓存JMS资源 -->
+    <bean id="connectionFactory"
+          class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="amqConnectionFactory"/>
+        <!-- session缓存数量 -->
+        <property name="sessionCacheSize" value="100"/>
+    </bean>
+
+    <!-- 消息接收处理类 -->
+    <bean id="queueReceiver1" class="com.gupaoedu.consumer.QueueMessageListener1"></bean>
+    <bean id="queueReceiver2" class="com.gupaoedu.consumer.QueueMessageListener2"></bean>
+    <bean id="topicReceiver1" class="com.gupaoedu.consumer.TopicMessageListener1"></bean>
+    <bean id="topicReceiver2" class="com.gupaoedu.consumer.TopicMessageListener2"></bean>
+
+    <!-- Queue监听器 -->
+    <jms:listener-container destination-type="queue"
+                            container-type="default" connection-factory="connectionFactory"
+                            acknowledge="auto">
+        <jms:listener destination="queue" ref="queueReceiver1"/>
+        <jms:listener destination="queue" ref="queueReceiver2"/>
+    </jms:listener-container>
+
+    <!-- Topic监听器 -->
+    <jms:listener-container destination-type="topic"
+                            container-type="default" connection-factory="connectionFactory"
+                            acknowledge="auto">
+        <jms:listener destination="topic" ref="topicReceiver1"/>
+        <jms:listener destination="topic" ref="topicReceiver2"/>
+    </jms:listener-container>
+</beans>

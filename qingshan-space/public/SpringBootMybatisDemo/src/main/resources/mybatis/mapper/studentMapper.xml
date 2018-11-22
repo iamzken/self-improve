@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gupaoedu.demo.mapper.StudentMapper" >
+
+    <resultMap id="BaseResultMap" type="com.gupaoedu.demo.entity.Student" >
+        <id column="sid" property="sid" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="qq" property="qq" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="getStudentList" resultMap="BaseResultMap"  >
+      SELECT sid,name,qq FROM student WHERE  1=1
+        AND NAME LIKE concat(concat('%',#{0}),'%')
+        order by sid
+       limit #{1},#{2}
+    </select>
+
+
+    <select id="getStudentCount"   resultType="java.lang.Integer">
+        select count(sid) count from student
+    </select>
+
+
+    <select id="getStudentById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT * FROM student WHERE sid = #{sid}
+    </select>
+
+    <insert id="add" parameterType="com.gupaoedu.demo.entity.Student" >
+        INSERT INTO
+        student
+        (name,qq,sid)
+        VALUES
+        (#{name}, #{qq}, #{sid})
+    </insert>
+
+    <update id="update" parameterType="com.gupaoedu.demo.entity.Student" >
+        UPDATE
+        student
+        SET
+        name = #{name},qq = #{qq}
+        WHERE
+        sid = #{sid}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        DELETE FROM
+        student
+        WHERE
+        sid = #{sid}
+    </delete>
+</mapper>

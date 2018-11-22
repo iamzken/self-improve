@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>学员详情查看</title>
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/jquery-3.3.1/jquery-3.3.1.js}"></script>
+</head>
+
+<body>
+   <form class="layui-form"  th:action="@{/edit}" th:object="${student}" id="studentFrom"  method="post">
+
+       <div class="layui-form-item" style="margin-top: 20px;">
+           <label class="layui-form-label">学号：</label>
+           <div class="layui-input-block">
+               <input type="text" name="sid" id="sid"  style="width: 400px;"   placeholder="请输入学号"  class="layui-input">
+           </div>
+       </div>
+
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <label class="layui-form-label">姓名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name"  style="width: 400px;"   placeholder="请输入姓名"  class="layui-input">
+            </div>
+        </div>
+       <div class="layui-form-item">
+           <label class="layui-form-label">QQ：</label>
+           <div class="layui-input-block">
+               <input type="text" name="qq" id="qq"  style="width: 400px;"  placeholder="请输入QQ"  class="layui-input">
+           </div>
+       </div>
+
+       <div class="layui-form-item">
+           <div class="layui-input-block">
+               <button type="button" class="layui-btn"  th:onclick="'javascript:save()'">确认</button>
+               <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+           </div>
+       </div>
+    </form>
+
+</body>
+
+<script>
+
+    function save(){
+       var name = $("#name").val();
+       var qq = $("#qq").val();
+       var sid = $("#sid").val();
+
+        if(sid.trim()==""){
+            parent.layer.msg("请输入学号");
+            return;
+        }
+        if(isNaN(sid)){
+            parent.layer.msg("学号必须是数字");
+            return;
+        }
+
+        if(name.trim()==""){
+            parent.layer.msg("请输入姓名");
+            return;
+        }
+        if(qq.trim()==""){
+            parent.layer.msg("请输入QQ");
+            return;
+        }
+        if(isNaN(qq)){
+            parent.layer.msg("QQ必须是数字");
+            return;
+        }
+        $.ajax({
+            url: "/stu/studentAdd",
+            type: "POST",
+            data:{"name":name,"qq":qq,"sid":sid},
+            dataType: "json",
+            success: function(data){
+                if(data==1){
+                    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                    parent.layer.close(index);  // 关闭layer
+                    parent.layer.msg("新增成功", {icon: 6});
+                    parent.location.reload();
+                }else{
+                    parent.layer.msg("新增失败", {icon: 5});
+                }
+            }
+        });
+    }
+
+</script>
+</html>

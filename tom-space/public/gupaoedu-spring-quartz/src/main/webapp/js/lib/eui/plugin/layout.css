@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+*{margin:0;padding:0;outline:none;}
+body {line-height: 1; font-family:"微软雅黑";font-size:14px;}
+ol,ul,li{list-style: none;}
+input,a:focus{outline:none;}
+table {border-collapse: collapse;border-spacing: 0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*zoom:1;}
+.cont{width:100%;padding:10px;}
+.cont>.north{ width:100%; height:15%;margin:0px;}
+.cont>.south{ width:100%; height:15%;margin:0px; }
+.cont>.middle{box-sizing:border-box;height:70%;padding-top:0.4%; overflow:hidden;}
+.cont>.middle>.west{float:left;width:15%;height:98%;position:relative;}
+.cont>.middle>.center{float:left;width:69.2%;height:98%;margin-left:0.4%;margin-right:0.4%;}
+.cont>.middle>.east{float:right; width:15%;height:98%; position:relative;}
+.cont>.middle>.west .shensuo{position:absolute; width:15px; height:15px;right:10px;top:10px;cursor:pointer;}
+.cont>.middle>.east .shensuo{position:absolute; width:15px; height:15px;right:10px;top:10px;cursor:pointer;}

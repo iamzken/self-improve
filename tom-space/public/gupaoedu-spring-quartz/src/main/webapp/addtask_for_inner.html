@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>新建任务</title>
+
+    <meta name="description" content="login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/bootstrap-select.css" rel="stylesheet" />
+    <!-- 
+    	<link href="laydate/need/laydate.css" rel="stylesheet" type="text/css" />
+    	*{background-color: #fff;}
+    -->
+	<style type="text/css">
+		body::before {background-color: #fff;}
+		html body{font-family:"微软雅黑";}
+		label{cursor:pointer;}
+		.container{padding-top:5px;min-width:980px;overflow:auto;}
+		.error-msg{color:#DD7777;padding-left:85px;clear:both;padding-top:5px;}
+		.has-error input{border:1px solid red;}
+		.input-des{width:60px;margin-right:5px;text-align:right;float:left;padding-top:10px;}
+		.set{width:700px; margin:0 auto;}
+		.set .pleft{float:left;width:100px; border-right:1px solid #DDDDDD;}
+		.set .pright{float:right;width:540px;}
+		.set .set-cont{padding:0 10px;}
+		.set .set-cont-group{margin-top:20px;min-height:40px;} 
+		.set .set-cont .once-group{display:none;}
+		.set .set-cont .emonth-group .lbl-month{width:90px; display:inline-block; vertical-align:middle;}
+		.set .set-cont .emonth-group .days{width:400px;display:inline-block;}
+	</style>
+</head>
+<body>
+
+	<table><tr><td>	
+	&nbsp;触&nbsp;发&nbsp;器&nbsp;:&nbsp;<select onchange="taskSelect();" id="taskSelect"></select>&nbsp;&nbsp;<br><br>
+	任务名称&nbsp;:&nbsp;<span><input type="text" id="selfDefinitionTaskName" style="width:390px;"></span>&nbsp;&nbsp;
+	执行次数&nbsp;:&nbsp;<span><input type="number" id="exeTaskNum" onpaste="check1(this,0,999999);" onkeyup="check1(this,0,999999);" min="0" max="999999" style="width:90px;">&nbsp;&nbsp;(为0或为空代表永久执行)</span>&nbsp;<br>
+	<span id="ralParams" style="display:none;"></span><br>
+	</td></tr><tr><td>
+	</td></tr><tr><td>
+	<span class="container">
+	    <div class="panel panel-default set">
+		  <div class="panel-heading">设置</div>
+		  <div class="panel-body">
+		  		<div class="pleft">
+		  			<p><label><input onclick="relationChange(this);" type="radio" checked="checked" name="cronSelect" value="simple" class="colored-blue">即时</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="seconds" class="colored-blue">秒(S)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="minute" class="colored-blue">分钟(M)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="hour" class="colored-blue">小时(H)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="day" class="colored-blue">日(D)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="month" class="colored-blue">月(M)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="week" class="colored-blue">周(W)</label></p>
+		  			<p><label><input onclick="relationChange(this);" type="radio" name="cronSelect" value="selfDefinition" class="colored-blue">自定义</label></p>
+		  		</div>
+		    	<div class="pright set-cont">
+		    		<div class="row" id="relationDiv">
+		    		
+			    		<div id="simpleTime" >
+			    			<!-- 	
+			    				<input onchange="simpleTimeCron();" onclick='simpleTimeCron();' id="simpleTimeSelect" class="laydate-icon" style="width:205px;" size="16" type="text">
+			    		 	-->
+			    		 	<span id="simpleTimeSelect">即刻执行,在上面填写次数</span>
+		                </div>
+		            
+		                <div id="seconds" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" onclick="timingCron();" name="secondsSelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" onclick="timingCron();" name="secondsSelect" value="secondsChoiceOne" class="colored-blue">
+		                			<span id="secondsChoiceOne">
+		                			周期从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,58);timingCron();" value='1' min='1' max='58' onpaste="check1(this,1,58);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick='timingCron();' onkeyup="check1(this,2,59);timingCron();" value='2' min='2' max='59' onpaste="check1(this,2,59);" type="number" style="width:60px;display:inline-block;"/>&nbsp;秒
+		                			</span><br><br> 
+		                		<input onclick='timingCron();' type="radio" onclick="timingCron();" name="secondsSelect" value="secondsChoiceTwo" class="colored-blue">
+		                			<span id="secondsChoiceTwo">
+		                			从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,0,59);timingCron();" value='0' min='0' max='59' onpaste="check1(this,0,59);" type="number" style="width:60px;display:inline-block;"/>&nbsp;秒开始,每
+		                			&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,59);timingCron();" value='1' min='1' max='59' onpaste="check1(this,1,59);" type="number" style="width:60px;display:inline-block;"/>&nbsp;秒执行一次 
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" onclick="timingCron();" name="secondsSelect" value="secondsChoiceThree" class="colored-blue">&nbsp;指定
+		                			<span id="secondsChoiceThree">
+		                				<table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="minute" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" name="minuteSelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" name="minuteSelect" value="minuteChoiceOne" class="colored-blue">
+		                			<span id="minuteChoiceOne">
+		                			周期从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,58);timingCron();" value='1' min='1' max='58' onpaste="check1(this,1,58);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick='timingCron();' onkeyup="check1(this,2,59);timingCron();" value='2' min='2' max='59' onpaste="check1(this,2,59);" type="number" style="width:60px;display:inline-block;"/>&nbsp;分钟
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="minuteSelect" value="minuteChoiceTwo" class="colored-blue">
+		                			<span id="minuteChoiceTwo">
+		                			从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,0,59);timingCron();" value='0' min='0' max='59' onpaste="check1(this,0,59);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;分钟开始,每
+		                			&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,59);timingCron();" value='1' min='1' max='59' onpaste="check1(this,1,59);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;分钟执行一次 
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="minuteSelect" value="minuteChoiceThree" class="colored-blue">&nbsp;指定
+		                			<span id="minuteChoiceThree">
+		                				<table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="hour" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" name="hourSelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" name="hourSelect" value="hourChoiceOne" class="colored-blue">
+		                			<span id="hourChoiceOne">
+		                			周期从&nbsp;<input onclick="timingCron();" onkeyup="check1(this,0,23);timingCron();" value="0" min="0" max="23" onpaste="check1(this,0,23);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick="timingCron();" onkeyup="check1(this,2,23);timingCron();" value='2' min='2' max='23' onpaste="check1(this,2,23);" type="number" style="width:60px;display:inline-block;"/>&nbsp;小时
+		                			</span><br><br>
+		                		<input onclick="timingCron();" type="radio" name="hourSelect" value="hourChoiceTwo" class="colored-blue">
+		                			<span id="hourChoiceTwo">
+		                			从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,0,23);timingCron();" value='0' min='0' max='23' onpaste="check1(this,0,23);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;小时开始,每
+		                			&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,23);timingCron();" value='1' min='1' max='23' onpaste="check1(this,1,23);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;小时执行一次 
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="hourSelect" value="hourChoiceThree" class="colored-blue">&nbsp;指定
+		                			<span id="hourChoiceThree">
+		                				<table></table><table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="day" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" name="daySelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" name="daySelect" value="dayChoiceOne" class="colored-blue">
+		                			<span id="dayChoiceOne">
+		                			周期从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,31);timingCron();" value='1' min='1' max='31' onpaste="check1(this,1,31);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick='timingCron();' onkeyup="check1(this,2,31);timingCron();" value='2' min='2' max='31' onpaste="check1(this,2,31);" type="number" style="width:60px;display:inline-block;"/>&nbsp;日
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="daySelect" value="dayChoiceTwo" class="colored-blue">
+		                			<span id="dayChoiceTwo">
+		                			从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,31);timingCron();" value='1' min='1' max='31' onpaste="check1(this,1,31);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;日开始,每
+		                			&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,31);timingCron();" value='1' min='1' max='31' onpaste="check1(this,1,31);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;日执行一次 
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="daySelect" value="dayChoiceThree" class="colored-blue">&nbsp;指定
+		                			<span id="dayChoiceThree">
+		                				<table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="month" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" name="monthSelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" name="monthSelect" value="monthChoiceOne" class="colored-blue">
+		                			<span id="monthChoiceOne">
+		                			周期从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,12);timingCron();" value='1' min='1' max='12' onpaste="check1(this,1,12);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick='timingCron();' onkeyup="check1(this,2,12);timingCron();" min='2' value='2' max='12' onpaste="check1(this,2,12);" type="number" style="width:60px;display:inline-block;"/>&nbsp;月
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="monthSelect" value="monthChoiceTwo" class="colored-blue">
+		                			<span id="monthChoiceTwo">
+		                			从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,12);timingCron();" value='1' min='1' max='12' onpaste="check1(this,1,12);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;月开始,每
+		                			&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,12);timingCron();" value='1' min='1' max='12' onpaste="check1(this,1,12);" type="number" class="form-control" style="width:60px;display:inline-block;"/>&nbsp;月执行一次 
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="monthSelect" value="monthChoiceThree" class="colored-blue">&nbsp;指定
+		                			<span id="monthChoiceThree">
+		                				<table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="week" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		<input onclick='timingCron();' type="radio" name="weekSelect" checked value="*" class="colored-blue">&nbsp;通配符(&nbsp;*&nbsp;)<br><br>
+		                		<input onclick='timingCron();' type="radio" name="weekSelect" value="weekChoiceOne" class="colored-blue">
+		                			<span id="weekChoiceOne">
+		                			周期从&nbsp;<input onclick='timingCron();' onkeyup="check1(this,1,7);timingCron();" value='1' min='1' max='7' onpaste="check1(this,1,7);" type="number" style="width:60px;display:inline-block;"/>&nbsp;-&nbsp;
+		                			<input onclick='timingCron();' onkeyup="check1(this,2,7);timingCron();" value='2' min='2' max='7' onpaste="check1(this,2,7);" type="number" style="width:60px;display:inline-block;"/>&nbsp;周
+		                			</span><br><br>
+		                		<input onclick='timingCron();' type="radio" name="weekSelect" value="weekChoiceTwo" class="colored-blue">&nbsp;指定
+		                			<span id="weekChoiceTwo">
+		                				<table></table>
+		                			</span>
+		                	</div>
+		                </div>
+		                
+		                <div id="selfDefinition" class="panel panel-default set-cont-group eday-group" style="display:none;">
+		                	<div class="panel-body">
+		                		&nbsp;&nbsp;cron表达式&nbsp;:&nbsp;
+		                		<input onclick="selfDefinitionCron();" maxlength="30" id="selfDefinitionCron" onkeyup="selfDefinitionCron();" onpaste="selfDefinitionCron" type="text" style="width:257px;" class="colored-blue">&nbsp;&nbsp;<br>	
+		                	</div>
+		                </div>
+		                
+	                </div>	
+		    	</div>	
+		  </div>	
+		 <span style="padding-left:10px;">cron表达式&nbsp;:&nbsp;</span>
+		 <span id="cronExpression" style="padding-left:10px;"></span>
+		 <span style="padding-bottom:10px;padding-left:210px;" onclick="addTimer();"><i class="btn btn-primary">提交</i></span>
+		</div>
+	</span>
+	
+	</td></tr></table>
+	
+    <!--Basic Scripts-->
+    <script src="js/domain.js"></script>
+	<script src="js/lib/jquery-1.8.0.min.js"></script>
+    <script src="js/lib/eui/eui.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="laydate/laydate.js"></script>
+    <script>		
+    
+   	 var regex = "(.+)\\((.*)\\)";
+    	setTimeout(function(){	
+    		var tasks = JSON.parse($("#allTasks",window.parent.document).attr("value"));
+    		for(var i in tasks){	
+    			var tempStr = "<option value='"+JSON.stringify(tasks[i])+"'>" + tasks[i].desc + "-" + tasks[i].trigger.replace(/com\.cn95598\.analysis\.timer\.impl\./g,"")+"</option>";
+    	        $("#taskSelect").append( tempStr );
+    		}
+    		laydate({
+    			istime: true,
+    			format: 'YYYY-MM-DD hh:mm:ss',
+    			elem: '#simpleTimeSelect'
+    		});		
+            $("#simpleTimeSelect").attr("value",new Date().Format("yyyy-MM-dd hh:mm:ss"));
+            simpleTimeCron();
+            
+            initialTable($("#secondsChoiceThree"),60,"seconds");
+            initialTable($("#minuteChoiceThree"),60,"minute");
+            initialTable($("#hourChoiceThree"),12,"hour");
+            initialTable($("#dayChoiceThree"),31,"day");	
+            initialTable($("#monthChoiceThree"),12,"month");	
+            initialTable($("#weekChoiceTwo"),7,"week");
+            
+            taskSelect();
+                   
+    	},1599);
+    	
+    	function addTimer(){
+    		if(window.confirm('确定是否创建该任务？')){
+    			var type = $("input[name='cronSelect']:checked").attr("value");
+        		var cronStr ;	
+        		if("simpleTime"==type){
+        			cronStr = $("#simpleTimeSelect").attr("value");	
+        		}else{
+        			cronStr = $("#cronExpression").text();	
+        		}	
+        		var task = $("#taskSelect").find("option:selected").val();
+        		var name = $("#selfDefinitionTaskName").attr("value");
+        		var exeTaskNum = $("#exeTaskNum").attr("value");
+        		var paramsArray = new Array();
+        		$("#ralParams").find("input[type^=text]").each(function(i){
+        			if($(this).attr("value")!=""){
+        				paramsArray[i] = $(this).attr("value");
+        			}else{
+        				paramsArray[i] = null ;
+        			}
+        		});
+        		
+        		task = eval("(" + task + ")");
+        		
+        		task.cronStr = cronStr;
+        		task.desc = name;
+        		task.planExe = exeTaskNum;
+        		
+        		
+        		task = JSON.stringify(task);
+        		
+        		
+        		$.ajax({ 
+        			url:"/web/task/add.json",
+        			dataType:"json",	
+        			type:"POST",
+        			data:{type:type,task:task,paramsArray:JSON.stringify(paramsArray)},
+        			success:function(datas){
+        				window.parent.dataChange(1,10);
+        				if(datas.status == 1){
+        					UI.alert({icon:'success',title:"",msg:"创建成功"});
+        				}
+        			},
+        			error:function(datas){
+        				UI.alert({icon:'danger',title:"",msg:"错误- "+datas.msg });
+        			}
+        		});
+             }else{}
+    	}
+    	
+    	function taskSelect(){	
+    		var tasks = JSON.parse($("#allTasks",window.parent.document).attr("value"));
+    		for(var i in tasks){	
+    			if(tasks[i].trigger==$("#taskSelect").find("option:selected").text()){
+    				$("#selfDefinitionTaskName").attr("value",tasks[i].desc);	break;
+    			}
+    		}	
+    		if($("#taskSelect").find("option:selected").text().split("()").length==1){
+    			var tempLayDateNum = 0 ;
+    			var tempStr = $("#taskSelect").find("option:selected").text().match(regex);
+    			var tempArr = tempStr[tempStr.length-1].split(",");
+    			var tempHtmlStr = "" ;
+    			tempHtmlStr += "<br>触发器描述&nbsp;:&nbsp;<span>"+JSON.parse($("#taskSelect").find("option:selected").val()).desc+"</span><br>";
+    			tempHtmlStr += "<table style='padding-left:55px;'>";
+    			for(var i=0;i<tempArr.length;i++){
+    				var tempLast = tempArr[i].split(".");	
+    				if(tempLast[tempLast.length-1].toLowerCase()=="date"){
+    					tempHtmlStr += "<tr><td align='right'><span>"+tempLast[tempLast.length-1].toLowerCase()+"</span>&nbsp;:&nbsp;</td><td><input class='laydate-icon' type='text' style='width:205px;' id='layDate"+tempLayDateNum+"'></td></tr>";
+    					tempLayDateNum++ ;
+    				}else if(tempLast[tempLast.length-1].toLowerCase()=="list"){
+    					tempHtmlStr += "<tr><td align='right'><span >"+tempLast[tempLast.length-1].toLowerCase()+"</span>&nbsp;:&nbsp;</td><td><input type='text' maxlength='20' style='width:205px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list集合参数请用&nbsp; , &nbsp;隔开</td></tr>";
+    				}else{
+    					tempHtmlStr += "<tr><td align='right'><span >"+tempLast[tempLast.length-1].toLowerCase()+"</span>&nbsp;:&nbsp;</td><td><input type='text' maxlength='20' style='width:205px;'>&nbsp;</td></tr>";
+    				}
+    			}
+    			tempHtmlStr += "</table>";
+    			$("#ralParams").html(tempHtmlStr);
+    			$("#ralParams").show();
+    			setTimeout(function(n){
+          			$("#ralParams").find("input[class^=laydate-icon]").each(function(w){	
+                  		var tempDate = {
+                    			elem: "#layDate"+w,
+                    			format: 'YYYY-MM-DD hh:mm:ss',
+                    			istime: true,
+                    			istoday: true
+                    		};			
+                    	laydate(tempDate);
+          			});
+    			},1000);
+    		}else{
+    			$("#ralParams").hide();
+    		}
+    	}
+    	
+    	var relationArray=new Array();
+    		relationArray[0]="simpleTime";
+    		relationArray[1]="seconds";
+    		relationArray[2]="minute";
+    		relationArray[3]="hour";
+    		relationArray[4]="day";
+    		relationArray[5]="month";
+    		relationArray[6]="week";
+    		relationArray[7]="selfDefinition";
+    		
+    	function check1(thisObj,minVal,maxVal){		
+    		if(isNaN($(thisObj).attr("value"))||($(thisObj).attr("value")=="")){
+    			$(thisObj).attr("value",minVal);
+    		}else{
+    			if($(thisObj).attr("value")<minVal){
+					$(thisObj).attr("value",minVal);
+				}else if($(thisObj).attr("value")>maxVal){
+					$(thisObj).attr("value",maxVal);
+				}
+    		}
+    	}	
+    	
+    	function relationChange(thisObj){	
+    		if($(thisObj).attr("value")=="simpleTime"){
+    			simpleTimeCron();
+    		}else if($(thisObj).attr("value")=="selfDefinition"){
+    			selfDefinitionCron();
+    		}else{
+    			timingCron();
+    		}
+    		$.each(relationArray,function(n,value) {  
+    	        if($(thisObj).attr("value")==value){
+    				$("#"+value).show();
+    			}else{
+    				$("#"+value).hide();
+    			}
+    	    });  
+    	}
+    	
+    	function selfDefinitionCron(){
+    		$("#cronExpression").html($("#selfDefinitionCron").attr("value"));
+    	}
+    	
+    	function simpleTimeCron(){	
+    		
+    		$("#cronExpression").html("");	return;
+    		
+    		if($("#simpleTimeSelect").attr("value")=="")	return;
+    		var tempSplit1 = $("#simpleTimeSelect").attr("value").split(" ");
+    		var tempSplit2 = tempSplit1[0].split("-");	//	年 月 日
+    		var tempSplit3 = tempSplit1[1].split(":");	//	时 分 
+			$("#cronExpression").html(tempSplit3[2]+" "+tempSplit3[1]+" "+tempSplit3[0]+" "+tempSplit2[2]+" "+tempSplit2[1]+" ? "+tempSplit2[0]);
+    	}
+    	
+    	function initialTable(thisObj,num,type){
+    		var table = $(thisObj).find("table");
+    		var tr = "<tr>";
+    		if((type=="seconds")||(type=="minute")){
+    			for(var i=0;i<num;i++){
+        			tr += "<td width='50px'><input onclick='timingCron();' type='checkbox' value="+i+">&nbsp;"+i+"</td>";
+    				if(((i+1)%10==0)||((i+1)==num)){
+    					tr += "</tr>";
+    					table.append(tr);
+    					var tr = "<tr>";
+    				}
+    			}
+    		}else if((type=="day")||(type=="month")||(type=="week")){
+    			for(var i=0;i<num;i++){
+        			tr += "<td width='50px'><input onclick='timingCron();' type='checkbox' value="+(i+1)+">&nbsp;"+(i+1)+"</td>";
+        			if(((i+1)%10==0)||((i+1)==num)){
+        				tr += "</tr>";
+        				table.append(tr);
+        				var tr = "<tr>";
+        			}
+        		}
+    		}else if(type=="hour"){
+    			$(thisObj).find("table").each(function(q){
+    				for(var i=0;i<num;i++){
+    					if(i==0){
+    						if(q==0){
+    							tr += "<td width='40px'>&nbsp;AM&nbsp;</td>";
+    						}else{
+    							tr += "<td width='40px'>&nbsp;PM&nbsp;</td>";
+    						}
+    					}else{
+    						tr += "<td width='40px'><input onclick='timingCron();' type='checkbox' value="+(q==0?(i):(i+12))+">&nbsp;"+(q==0?(i):(i+12))+"</td>";
+    					}
+    	        		if((i+1)==num){
+    	        			tr += "</tr>";
+    	        			$(this).append(tr);
+    	        			var tr = "<tr>";
+    	        		}
+    	        	}
+    			});
+    		}
+    	}
+    	
+    	Date.prototype.Format = function (fmt) { //author: meizz 
+    	    var o = {
+    	        "M+": this.getMonth() + 1, //月份 
+    	        "d+": this.getDate(), //日 
+    	        "h+": this.getHours(), //小时 
+    	        "m+": this.getMinutes(), //分 
+    	        "s+": this.getSeconds(), //秒 
+    	        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+    	        "S": this.getMilliseconds() //毫秒 
+    	    };
+    	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    	    for (var k in o)
+    	    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    	    return fmt;
+    	}
+    	
+    function timingCron(){
+    		var secondsTimingStr = "" ;
+    		var minuteTimingStr = "" ;
+    		var hourTimingStr = "" ;
+    		var dayTimingStr = "" ;
+    		var monthTimingStr = "" ;
+    		var weekTimingStr = "" ;
+    		if($("#seconds").find("input:radio:checked").attr("value")=="*"){
+    			secondsTimingStr = "*" ;
+    		}else{
+    			if($("#seconds").find("input:radio:checked").attr("value")!="secondsChoiceThree"){
+    				$("#"+$("#seconds").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						secondsTimingStr += $(this).attr("value") ;
+    					}else{
+    						if($("#seconds").find("input:radio:checked").attr("value")=="secondsChoiceOne"){
+    							secondsTimingStr = secondsTimingStr +"-"+ $(this).attr("value") ;
+    						}else if($("#seconds").find("input:radio:checked").attr("value")=="secondsChoiceTwo"){
+    							secondsTimingStr = secondsTimingStr +"/"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#seconds").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						secondsTimingStr += $(this).attr("value") ;
+    					}else{
+    						secondsTimingStr = secondsTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}	
+    		}
+    		if($("#minute").find("input:radio:checked").attr("value")=="*"){
+    			minuteTimingStr = " *" ;
+    		}else{
+    			if($("#minute").find("input:radio:checked").attr("value")!="minuteChoiceThree"){
+    				$("#"+$("#minute").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						minuteTimingStr = minuteTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						if($("#minute").find("input:radio:checked").attr("value")=="minuteChoiceOne"){
+    							minuteTimingStr = minuteTimingStr +"-"+ $(this).attr("value") ;
+    						}else if($("#minute").find("input:radio:checked").attr("value")=="minuteChoiceTwo"){
+    							minuteTimingStr = minuteTimingStr +"/"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#minute").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						minuteTimingStr = minuteTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						minuteTimingStr = minuteTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}
+    		}
+    		if($("#hour").find("input:radio:checked").attr("value")=="*"){
+    			hourTimingStr = " *" ;
+    		}else{
+    			if($("#hour").find("input:radio:checked").attr("value")!="hourChoiceThree"){
+    				$("#"+$("#hour").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						hourTimingStr = hourTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						if($("#hour").find("input:radio:checked").attr("value")=="hourChoiceOne"){
+    							hourTimingStr = hourTimingStr +"-"+ $(this).attr("value") ;
+    						}else if($("#hour").find("input:radio:checked").attr("value")=="hourChoiceTwo"){
+    							hourTimingStr = hourTimingStr +"/"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#hour").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						hourTimingStr = hourTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						hourTimingStr = hourTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}
+    		}
+    		if($("#day").find("input:radio:checked").attr("value")=="*"){
+    			dayTimingStr = " *" ;
+    		}else{
+    			if($("#day").find("input:radio:checked").attr("value")!="dayChoiceThree"){
+    				$("#"+$("#day").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						dayTimingStr = dayTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						if($("#day").find("input:radio:checked").attr("value")=="dayChoiceOne"){
+    							dayTimingStr = dayTimingStr +"-"+ $(this).attr("value") ;
+    						}else if($("#day").find("input:radio:checked").attr("value")=="dayChoiceTwo"){
+    							dayTimingStr = dayTimingStr +"/"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#day").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						dayTimingStr = dayTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						dayTimingStr = dayTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}
+    		}
+    		if($("#month").find("input:radio:checked").attr("value")=="*"){
+    			monthTimingStr = " *" ;
+    		}else{
+    			if($("#month").find("input:radio:checked").attr("value")!="monthChoiceThree"){
+    				$("#"+$("#month").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						monthTimingStr = monthTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						if($("#month").find("input:radio:checked").attr("value")=="monthChoiceOne"){
+    							monthTimingStr = monthTimingStr +"-"+ $(this).attr("value") ;
+    						}else if($("#month").find("input:radio:checked").attr("value")=="monthChoiceTwo"){
+    							monthTimingStr = monthTimingStr +"/"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#month").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						monthTimingStr = monthTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						monthTimingStr = monthTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}
+    		}
+    		if($("#week").find("input:radio:checked").attr("value")=="*"){
+    			weekTimingStr = " *" ;
+    		}else{
+    			if($("#week").find("input:radio:checked").attr("value")!="weekChoiceTwo"){
+    				$("#"+$("#week").find("input:radio:checked").attr("value")).find("input[type=number]").each(function(i){
+    					if(i==0){	
+    						weekTimingStr = weekTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						if($("#week").find("input:radio:checked").attr("value")=="weekChoiceOne"){
+    							weekTimingStr = weekTimingStr +"-"+ $(this).attr("value") ;
+    						}
+    					}
+    				});
+    			}else{
+    				$("#"+$("#week").find("input:radio:checked").attr("value")).find("input:checkbox:checked").each(function(i){
+    					if(i==0){	
+    						weekTimingStr = weekTimingStr +" "+ $(this).attr("value") ;
+    					}else{
+    						weekTimingStr = weekTimingStr +","+ $(this).attr("value") ;
+    					}
+    				});
+    			}
+    		}
+    		var tempSecondsTimingStr = ((secondsTimingStr=="-"||secondsTimingStr=="/"||secondsTimingStr=="")?" *":secondsTimingStr);
+    		var tempMinuteTimingStr = ((minuteTimingStr==" -"||minuteTimingStr==" /"||minuteTimingStr=="")?" *":minuteTimingStr);
+    		var tempHourTimingStr = ((hourTimingStr==" -"||hourTimingStr==" /"||hourTimingStr=="")?" *":hourTimingStr);
+    		var tempDayTimingStr = ((dayTimingStr==" -"||dayTimingStr==" /"||dayTimingStr=="")?" *":dayTimingStr);
+    		var tempMonthTimingStr = ((monthTimingStr==" -"||monthTimingStr==" /"||monthTimingStr=="")?" *":monthTimingStr);
+    		var tempWeekTimingStr = ((weekTimingStr==" -"||weekTimingStr==" /"||weekTimingStr=="")?" *":weekTimingStr);
+    		if(tempMonthTimingStr==" *"&&tempWeekTimingStr!=" *"){
+    			$("#cronExpression").html( tempSecondsTimingStr+tempMinuteTimingStr+tempHourTimingStr+tempDayTimingStr+" ?"+tempWeekTimingStr );
+    		}else if(tempMonthTimingStr!=" *"&&tempWeekTimingStr==" *"){
+    			$("#cronExpression").html( tempSecondsTimingStr+tempMinuteTimingStr+tempHourTimingStr+tempDayTimingStr+tempMonthTimingStr+" ?" );
+    		}else{
+    			$("#cronExpression").html( tempSecondsTimingStr+tempMinuteTimingStr+tempHourTimingStr+tempDayTimingStr+tempMonthTimingStr+" ?" );
+    		}
+//			$("#cronExpression").html(((secondsTimingStr=="-"||secondsTimingStr=="/"||secondsTimingStr=="")?" *":secondsTimingStr)+((minuteTimingStr==" -"||minuteTimingStr==" /"||minuteTimingStr=="")?" *":minuteTimingStr)+((hourTimingStr==" -"||hourTimingStr==" /"||hourTimingStr=="")?" *":hourTimingStr)+((dayTimingStr==" -"||dayTimingStr==" /"||dayTimingStr=="")?" *":dayTimingStr)+((monthTimingStr==" -"||monthTimingStr==" /"||monthTimingStr=="")?" *":monthTimingStr)+((weekTimingStr==" -"||weekTimingStr==" /"||weekTimingStr=="")?" *":weekTimingStr));
+    }
+    	
+    </script>
+
+</body>
+</html>

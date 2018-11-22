@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+	<display-name>Gupao Web Application</display-name>
+  	
+  	<!-- loading spring context start -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:application-web.xml</param-value>
+  	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+  	<!-- loading spring context end -->
+	
+	<!-- springmvc config start -->
+	<servlet>
+	  <servlet-name>dispatcher</servlet-name>
+	  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	  <init-param>
+            <param-name>contextClass</param-name>
+            <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+      </init-param>
+	    <load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>dispatcher</servlet-name>
+	  <url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<!-- springmvc config end -->
+
+
+	<servlet>
+		<servlet-name>async</servlet-name>
+		<servlet-class>com.gupaoedu.vip.spring5.demo.servlet.AsyncServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>async</servlet-name>
+		<url-pattern>/async</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

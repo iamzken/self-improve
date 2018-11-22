@@ -1,0 +1,2 @@
+https://github.com/029xjp/rpc_server.git
+https://github.com/029xjp/rpc_client.git

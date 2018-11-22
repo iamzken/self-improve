@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>商户详情查看</title>
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/jquery-3.3.1/jquery-3.3.1.js}"></script>
+</head>
+
+<body>
+   <form class="layui-form"  th:action="@{/edit}" th:object="${merchant}" id="merchantFrom"  method="post">
+
+
+        <div class="layui-form-item" style="margin-top: 20px;">
+            <label class="layui-form-label">商户名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name"  style="width: 400px;"   placeholder="请输入商户名称"  class="layui-input">
+            </div>
+        </div>
+
+       <div class="layui-form-item">
+           <label class="layui-form-label">商户地址：</label>
+           <div class="layui-input-block">
+               <input type="text" name="address" id="address"  style="width: 400px;"  placeholder="请输入商户地址"  class="layui-input">
+           </div>
+       </div>
+
+       <div class="layui-form-item" style="margin-top: 20px;">
+           <label class="layui-form-label">账号</label>
+           <div class="layui-input-block">
+               <input type="text" name="accountNo" id="accountNo"  style="width: 400px;"   placeholder="请输入账号"  class="layui-input">
+           </div>
+       </div>
+
+       <div class="layui-form-item">
+           <label class="layui-form-label">账户名称</label>
+           <div class="layui-input-block">
+               <input type="text" name="accountName" id="accountName"  style="width: 400px;"  placeholder="请输入账户名称"  class="layui-input">
+           </div>
+       </div>
+
+       <div class="layui-form-item">
+           <div class="layui-input-block">
+               <button type="button" class="layui-btn"  th:onclick="'javascript:save()'">确认</button>
+               <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+           </div>
+       </div>
+    </form>
+
+</body>
+
+<script>
+
+    function save(){
+       var name = $("#name").val();
+       var address = $("#address").val();
+       var accountNo = $("#accountNo").val();
+       var accountName = $("#accountName").val();
+
+        if(name.trim()==""){
+            parent.layer.msg("请输入商户名称");
+            return;
+        }
+        if(address.trim()==""){
+            parent.layer.msg("请输入商户地址");
+            return;
+        }
+        if(accountNo.trim()==""){
+            parent.layer.msg("请输入商户账号");
+            return;
+        }
+        if(accountName.trim()==""){
+            parent.layer.msg("请输入账户名称");
+            return;
+        }
+
+        $.ajax({
+            url: "/merchantAdd",
+            type: "POST",
+            data:{"name":name, "address":address, "accountNo":accountNo, "accountName":accountName},
+            dataType: "json",
+            success: function(data){
+                if(data==1){
+                    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                    parent.layer.close(index);  // 关闭layer
+                    parent.layer.msg("新增商户成功", {icon: 6});
+                    parent.location.reload();
+                }else{
+                    parent.layer.msg("新增商户失败", {icon: 5});
+                }
+            }
+        });
+    }
+
+</script>
+</html>

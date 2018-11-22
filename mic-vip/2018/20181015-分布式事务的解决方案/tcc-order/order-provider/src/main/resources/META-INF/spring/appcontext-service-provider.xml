@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"
+                                  ignore-unresolvable="true"/>
+
+    <dubbo:application name="tcc-order" owner="${dubbo.application.owner}"/>
+
+    <dubbo:registry id="orderRpcZk" protocol="zookeeper" group="${dubbo.group.name}"
+                    address="${zookeeper.address}" session="${zookeeper.session.timeout}"
+                    timeout="${zookeeper.connect.timeout}" file="./.dubbo/tcc-order-cache"/>
+
+
+    <dubbo:protocol name="dubbo" port="${dubbo.service.provider.port}" payload="52428800"/>
+
+    <dubbo:service interface="com.gupaoedu.tcc.PaymentService" registry="orderRpcZk"
+                   ref="paymentService" timeout="60000" retries="0"/>
+
+
+</beans>

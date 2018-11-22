@@ -1,0 +1,9 @@
+#body ul.pages li{margin: 5px;padding: 3px 5px;}
+#body .setting li{margin: 0px;padding: 0px;}
+
+ul.pages{ list-style: none;margin: 0px; }
+ul.pages li{ list-style: none;display: inline-block; padding:3px 5px; margin: 0px 5px; border:1px solid #ccc;min-width: 20px;min-height: 20px;text-align: center;line-height: 20px; }
+ul.pages li:hover{border: 1px solid #4BA7E1;color: #4BA7E1;}
+ul.pages li.pgEmpty{color: #ccc;}
+ul.pages li.pgEmpty:hover{border: 1px solid #ccc;color: #ccc;}
+ul.pages li.pgCurrent{color: #ff0000; border: none; }

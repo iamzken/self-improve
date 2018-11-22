@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-attachment: fixed;">
+<head>
+	<head>
+	    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	    <title>咕泡学院自研VIP云盘 - Prower by Gupao</title>
+	    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap/css/bootstrap.min.css"/>
+	    <link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css"/>
+	    <link rel="stylesheet" type="text/css" href="/css/explorer.layout.css"/>
+	    <!-- <link rel="stylesheet" type="text/css" href="/css/explorer.css"/> -->
+	</head>
+	<body style="overflow: hidden; cursor: auto;">
+
+		<div class="frame-header">
+			<div class="header-content">
+				<div class="header-left">
+					<div class="btn-group btn-group-sm">
+						<button type="button" title="后退" id="history_back" class="btn btn-default" style="height: 19px;"><i class="fa fa-arrow-left"></i></button>
+						<button type="button" title="前进" id="history_next" class="btn btn-default" style="height: 19px;"><i class="fa fa-arrow-right"></i></button>
+						<button type="button" title="强制刷新" id="refresh" class="btn btn-default" style="height: 19px;"><i class="fa fa-refresh"></i></button>
+					</div>
+				</div><!-- /header left -->
+
+				<div class="header-middle">
+					<button title="我的文件" id="home" class="btn btn-default"><i class="fa fa-home" style="font-size:18px;"></i></button>
+
+					<div title="点击进入编辑状态" id="yarnball" style="display: block;">
+					</div>
+					<div id="yarnball_input" style="display: none;"><input type="text" id="path" class="path" value="" name="path"></div>
+
+					<button type="button" title="上层" id="up" class="btn btn-default"><i class="fa fa-arrow-circle-up" style="font-size:16px;"></i></button>
+					<div title="" class="path_tips" data-original-title="该目录没有写权限&lt;br/&gt;可以在操作系统中设置此目录的权限" style="display: none;"><i class="icon-warning-sign"></i>只读</div>
+				</div><!-- /header-middle end-->
+				<div class="header-right">
+					<input type="text" name="seach">
+					<button type="button" title="搜索" id="search" class="btn btn-default"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</div>
+
+		<!-- / header end -->
+		<div class="frame-main">
+		    <div class="frame-left">
+
+					<ul class="ztree" id="folderList">
+
+					</ul>
+
+					<div class="bottom_box">
+						<div class="box_content">
+							<a class="cell recycleBtn" href="javascript:void(0);"><i class="fa fa-trash"></i><span>回收站</span></a>
+							<a id="logoutBtn" class="cell logoutBtn" href="javascript:void(0);"><i class="fa fa-power-off"></i><span>退出登录</span></a>
+							<div style="clear:both"></div>
+						</div>
+					</div>
+				</div>
+		    <div class="frame-resize"></div>
+		    <div class="frame-right">
+		        <div class="frame-right-main">
+						<div class="tools">
+							<div class="tools-left">
+								<!-- 回收站tool -->
+								<div class="btn-group btn-group-sm recycle_tool hidden">
+									<button type="button" class="btn btn-default" id="recycle_clear"><i class="fa fa-folder-close-alt"></i>清空回收站</button>
+								</div>
+
+								<!-- 分享 tool -->
+								<div class="btn-group btn-group-sm share_tool hidden">
+									<button type="button" class="btn btn-default" id="refresh"><i class="fa fa-folder-close-alt"></i>刷新</button>
+								</div>
+
+								<!-- 文件功能 -->
+								<div class="btn-group btn-group-sm path_tool">
+							        <button type="button" class="btn btn-default" id="showCreateFolderBtn"><i class="fa fa-folder-o"></i>新建文件夹	</button>
+							        <button type="button" class="btn btn-default" id="showUploadBtn"><i class="fa fa-cloud-upload"></i>上传</button>
+							        <button type="button" class="btn btn-default" id="downloadBtn"><i class="fa fa-download"></i>下载</button>
+								    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle" type="button">
+								      <i class="fa fa-tasks"></i>更多&nbsp;<span class="caret"></span>
+								    </button>
+								    <ul class="dropdown-menu pull-right drop-menu-action fadein">
+										<li id="preview" class="disabled"><a href="javascript:;"><i class="fa fa-folder-open"></i>打开</a></li>
+									    <li class="divider disabled"></li>
+									    <li id="copy" class="disabled"><a href="javascript:;"><i class="fa fa-copy"></i>复制</a></li>
+									    <li id="rname" class="disabled"><a href="javascript:;"><i class="fa fa-pencil"></i>重命名</a></li>
+									    <li id="cute" class="disabled"><a href="javascript:;"><i class="fa fa-cut"></i>剪切</a></li>
+									    <li id="past" class=""><a href="javascript:;"><i class="fa fa-paste"></i>粘贴</a></li>
+									    <li id="remove" class="disabled"><a href="javascript:;"><i class="fa fa-trash"></i>删除</a></li>
+									    <li class="divider disabled"></li>
+									    <li id="info" class=""><a href="javascript:;"><i class="fa fa-info"></i>属性</a></li>
+								    </ul>
+								</div>
+								<span class="msg" style="display: none;">载入中...</span>
+							</div>
+							<div class="tools-right">
+								<div class="btn-group btn-group-sm">
+								  <button class="btn btn-default active" type="button" title="图标排列" id="set_icon"><i class="fa fa-th"></i></button>
+								  <button class="btn btn-default" type="button" title="列表排列" id="set_list"><i class="fa fa-list"></i></button>
+								</div>
+							</div>
+							<div style="clear:both"></div>
+						</div><!-- end tools -->
+						<div id="list_type_list"></div><!-- list type 列表排序方式 -->
+						<div class="bodymain html5_drag_upload_box menuBodyMain">
+							<div class="fileContiner fileList_icon" style="display: block;"></div>
+						</div><!-- html5拖拽上传list -->
+					</div>
+		    </div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade hidden" id="createFolderModal" tabindex="-1" role="dialog"  aria-hidden="true" style="top:10%">
+		    <div class="modal-dialog" style="z-index: 1051">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		                <h4 class="modal-title">新建文件夹</h4>
+		            </div>
+		            <div class="modal-body">
+		                <div class="input-group">
+		                    <input id="nfname" type="text" size="80" class="form-control" placeholder="新建文件夹">
+		                </div>
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="explorer.createFolder($('#nfname').val())">确定</button>
+		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<div class="modal fade hidden" id="uploadModal" tabindex="-1" role="dialog"  aria-hidden="true" style="top:10%">
+			<div class="modal-header">
+		         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		         <h4 class="modal-title">上传文件</h4>
+		     </div>
+		     <div class="modal-body" style="position: relative; height: auto;overflow: hidden; ">
+		     	<iframe style="border: none;width: 100%;height: 100%;" allowtransparency="true"></iframe>
+		    </div>
+		</div>
+
+		<div class="modal fade hidden" id="delConfirm" tabindex="-1" role="dialog" aria-hidden="true" style="top:10%">
+		    <div class="modal-dialog" style="z-index: 1051">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		                <h4 class="modal-title">确认删除</h4>
+		            </div>
+		            <div class="modal-body">
+		                <p class="error-text"><i class="icon-warning-sign modal-icon" style="margin-right: 20px; font-size: 30px; color: #ccc"></i> 删除后将无法还原，是否确认?</p>
+		            </div>
+		            <div class="modal-footer">
+		                <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		                <a href="#" id="okbutton" class="btn btn-danger" style="color: #fff">删除</a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<div id="context-menu" class="btn-group btn-group-sm">
+		    <ul class="dropdown-menu" role="menu">
+		        <li fd="rname"><a tabindex="-1"><i class="icon-pencil"></i>重命名</a></li>
+		        <li fd="remove"><a tabindex="-1"><i class="icon-trash"></i>删除</a></li>
+		        <li fd="download"><a tabindex="-1"><i class="icon-download"></i>下载</a></li>
+		    </ul>
+		</div>
+
+		<iframe id="hiddenFrame" name="hiddenFrame" style="display: none"></iframe>
+		<form id="downForm" target="hiddenFrame" method="post" style="display: none"></form>
+		<script type="text/javascript" src="/js/lib/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="/js/lib/jquery.history.js"></script>
+		<script type="text/javascript" src="/js/lib/jquery.query-2.1.7.js"></script>
+		<script type="text/javascript" src="/js/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/lib/ztree/js/ztree.js"></script>
+
+		<script type="text/javascript" src="/js/util.js"></script>
+		<script type="text/javascript" src="/js/explorer.util.js"></script>
+
+	</body>
+</html>

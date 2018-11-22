@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style type="text/css">
+        .layui-table-page {
+            position:fixed;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <title>商户列表</title>
+    <script>
+        function deleteUser(id) {
+            alert(id)
+        }
+    </script>
+
+</head>
+
+<body>
+<div style="text-align: center">
+    <h1>商户列表</h1>
+    <br/>
+    <table align="center" border="1px" cellspacing="0" width="400px" style="text-align: center">
+        <tr>
+            <th>商户号</th>
+            <th>商户名称</th>
+            <th>地址</th>
+            <th colspan="2">操作</th>
+        </tr>
+        <tr th:each="merchant : ${merchantList}">
+            <td th:text="${merchant.id}"></td>
+            <td th:text="${merchant.name}"></td>
+            <td th:text="${merchant.address}"></td>
+            <td th:text="${merchant.accountNo}"></td>
+            <td th:text="${merchant.accountName}"></td>
+            <td>
+               <!-- <a th:href="@{/toEdit(id=${merchant.id})}">修改</a>-->
+                <button type="button"  th:onclick="'javascript:updateStudent('+${merchant.id}+')' ">修改</button>
+            </td>
+            <!--  <td><a th:href="@{/delete(id=${merchant.id})}">删除</a></td>-->
+            <td>
+                <button type="button"  th:onclick="'javascript:deleteStudent('+${merchant.id}+')' ">删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
