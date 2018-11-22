@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gupao.dal.dao.BlogMapper">
+  <resultMap id="BaseResultMap" type="com.gupao.dal.dao.Blog">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+  </resultMap>
+
+  <!-- 嵌套查询 start  1：1-->
+  <resultMap id="blogResultMap" type="com.gupao.dal.resultmap.BlogResultMap">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <association property="author" column="author_id"
+                 select="com.gupao.dal.dao.AuthorMapper.selectByPrimaryKey" />
+  </resultMap>
+
+  <select id="selectBlogAuthor" resultMap="blogResultMap" parameterType="int">
+    select
+    <include refid="Base_Column_List" />
+    from blog
+    where bid = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- 嵌套查询 end -->
+
+  <!-- 嵌套结果 start  1:1-->
+  <resultMap id="blogResultMap2" type="com.gupao.dal.resultmap.BlogResultMap">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <association property="author" javaType="com.gupao.dal.dao.Author">
+      <id column="aid" jdbcType="INTEGER" property="aid" />
+      <result column="author_name" jdbcType="VARCHAR" property="authorName" />
+    </association>
+  </resultMap>
+
+  <select id="selectBlogAuthor2" resultMap="blogResultMap2" parameterType="int">
+    select
+    *
+    from blog b,author a
+    where bid = #{id,jdbcType=INTEGER}
+    and
+    b.author_id = a.aid
+  </select>
+  <!-- 嵌套结果 end  1:1-->
+
+
+  <!-- 嵌套结果 1:N start  -->
+  <resultMap id="blogPostsResultMap2" type="com.gupao.dal.resultmap.BlogPostsResultMap">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+    <collection property="posts" ofType="com.gupao.dal.dao.Posts" >
+      <id column="pid" jdbcType="INTEGER" property="pid" />
+      <result column="post_name" jdbcType="VARCHAR" property="postName" />
+    </collection>
+  </resultMap>
+
+  <select id="selectBlogPosts2" resultMap="blogPostsResultMap2" parameterType="int">
+    select
+    *
+    from blog b,posts p
+    where b.bid = #{id,jdbcType=INTEGER}
+    and b.bid = p.blog_id
+  </select>
+  <!-- 嵌套结果 1:N end -->
+
+  <!-- 嵌套查询 1:N start  -->
+  <resultMap id="blogPostsResultMap" type="com.gupao.dal.resultmap.BlogPostsResultMap">
+    <id column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+    <collection column="bid" property="posts"
+                select="selectByBlogId" ofType="com.gupao.dal.dao.Posts" >
+    </collection>
+  </resultMap>
+
+  <select id="selectByBlogId" parameterType="java.lang.Integer"
+                  resultType="com.gupao.dal.dao.Posts">
+    select
+    pid,post_name as postName,blog_id as blogId
+    from posts
+    where blog_id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectBlogPosts" resultMap="blogPostsResultMap" parameterType="int">
+    select
+    <include refid="Base_Column_List" />
+    from blog
+    where bid = #{id,jdbcType=INTEGER} order by bid asc
+  </select>
+
+  <select id="selectBlogPostsList" resultMap="blogPostsResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from blog where bid > #{id,jdbcType=INTEGER}
+  </select>
+  <!-- 嵌套查询 1:N end -->
+
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    bid, name, author_id
+  </sql>
+  <select id="selectByExample" parameterType="com.gupao.dal.dao.BlogExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from blog
+    where bid = #{bid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from blog
+    where bid = #{bid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.gupao.dal.dao.BlogExample">
+    delete from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.gupao.dal.dao.Blog">
+    insert into blog (bid, name, author_id
+      )
+    values (#{bid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gupao.dal.dao.Blog">
+    insert into blog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="authorId != null">
+        author_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bid != null">
+        #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null">
+        #{authorId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.gupao.dal.dao.BlogExample" resultType="java.lang.Integer">
+    select count(*) from blog
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update blog
+    <set>
+      <if test="record.bid != null">
+        bid = #{record.bid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authorId != null">
+        author_id = #{record.authorId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update blog
+    set bid = #{record.bid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      author_id = #{record.authorId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gupao.dal.dao.Blog">
+    update blog
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null">
+        author_id = #{authorId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where bid = #{bid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gupao.dal.dao.Blog">
+    update blog
+    set name = #{name,jdbcType=VARCHAR},
+      author_id = #{authorId,jdbcType=INTEGER}
+    where bid = #{bid,jdbcType=INTEGER}
+  </update>
+</mapper>

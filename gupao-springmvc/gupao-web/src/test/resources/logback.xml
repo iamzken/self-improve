@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <property resource="config/app.properties"/>
+    <property name="LOG_HOME" value="${app.log.dir}"/>
+    <property name="pattern"
+              value="%date{ISO8601} %-5level [%thread] %logger{32} [%X{logPrefix}] - %msg%n"/>
+    <property name="charset" value="UTF-8"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="DEFAULT-APPENDER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/default.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/default_%d{yyyy-MM-dd}_%i.log</fileNamePattern>
+            <maxHistory>50</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>500MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <charset>${charset}</charset>
+            <pattern>${pattern}</pattern>
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+    </appender>
+
+    <logger name="com.gupao.web" level="INFO"/>
+    <logger name="com.gupao.dal" level="DEBUG"/>
+    <logger name="org.mybatis.spring.transaction" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="BIZ-APPENDER"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

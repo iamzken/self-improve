@@ -1,0 +1,30 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building gupaoedu-mybatis 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ gupaoedu-mybatis ---
+[INFO] com.gupaoedu:gupaoedu-mybatis:jar:1.0-SNAPSHOT
+[INFO] +- org.mybatis:mybatis:jar:3.4.2:compile
+[INFO] +- org.projectlombok:lombok:jar:1.16.6:compile
+[INFO] +- mysql:mysql-connector-java:jar:6.0.6:compile
+[INFO] +- com.alibaba:fastjson:jar:1.1.35:compile
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.21:compile
+[INFO] +- ch.qos.logback:logback-core:jar:1.1.7:compile
+[INFO] +- ch.qos.logback:logback-classic:jar:1.1.7:compile
+[INFO] +- org.springframework:spring-aspects:jar:5.0.1.RELEASE:compile
+[INFO] |  \- org.aspectj:aspectjweaver:jar:1.8.12:compile
+[INFO] +- org.springframework:spring-aop:jar:5.0.1.RELEASE:compile
+[INFO] |  +- org.springframework:spring-beans:jar:5.0.1.RELEASE:compile
+[INFO] |  \- org.springframework:spring-core:jar:5.0.1.RELEASE:compile
+[INFO] |     \- org.springframework:spring-jcl:jar:5.0.1.RELEASE:compile
+[INFO] +- org.aspectj:aspectjrt:jar:1.8.12:compile
+[INFO] \- org.aspectj:aspectjtools:jar:1.8.12:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.035 s
+[INFO] Finished at: 2017-12-11T20:53:56+08:00
+[INFO] Final Memory: 13M/230M
+[INFO] ------------------------------------------------------------------------
