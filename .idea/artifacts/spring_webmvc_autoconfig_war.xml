@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-webmvc-autoconfig:war">
+    <output-path>$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-autoconfig/target</output-path>
+    <root id="archive" name="spring-webmvc-autoconfig-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="spring-webmvc-autoconfig:war exploded" />
+    </root>
+  </artifact>
+</component>

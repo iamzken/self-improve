@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gpmall-activity:war">
+    <output-path>$PROJECT_DIR$/vip-project-space/gpmall-activity/target</output-path>
+    <root id="archive" name="gpmall-activity.war">
+      <element id="artifact" artifact-name="gpmall-activity:war exploded" />
+    </root>
+  </artifact>
+</component>

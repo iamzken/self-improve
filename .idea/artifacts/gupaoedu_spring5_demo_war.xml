@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-spring5-demo:war">
+    <output-path>$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring5-demo/target</output-path>
+    <root id="archive" name="gupaoedu-spring5-demo.war">
+      <element id="artifact" artifact-name="gupaoedu-spring5-demo:war exploded" />
+    </root>
+  </artifact>
+</component>

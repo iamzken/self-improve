@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="chapter-0523 (3):war">
+    <output-path>$PROJECT_DIR$/michael-public/公开课代码/michael-public/chapter-0523/target</output-path>
+    <root id="archive" name="chapter-0523.war">
+      <element id="artifact" artifact-name="chapter-0523 (3):war exploded" />
+    </root>
+  </artifact>
+</component>

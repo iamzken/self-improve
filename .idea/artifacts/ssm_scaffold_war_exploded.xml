@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ssm-scaffold:war exploded">
+    <output-path>$PROJECT_DIR$/mic-vip/2018/20181105-shiro整合的项目/ssm-scaffold/target/scaffold</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ssm-scaffold" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/mic-vip/2018/20181105-shiro整合的项目/ssm-scaffold/target/scaffold/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="ssm-scaffold/web/Web" />
+    </root>
+  </artifact>
+</component>

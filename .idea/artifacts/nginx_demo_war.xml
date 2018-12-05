@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nginx-demo:war">
+    <output-path>$PROJECT_DIR$/mic-vip/2017/vip-nginx/nginx-demo/target</output-path>
+    <root id="archive" name="nginx.war">
+      <element id="artifact" artifact-name="nginx-demo:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,47 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="session-demo:war exploded">
+    <output-path>$PROJECT_DIR$/mic-vip/2018/20180701-分布式session基于redis存储解决方案/session-demo/target/session-demo</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="session-demo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: org.logback-extensions:logback-ext-spring:0.1.5" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" />
+          <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.2" />
+          <element id="library" level="project" name="Maven: org.springframework.session:spring-session-data-redis:2.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:2.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:2.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.session:spring-session-core:2.0.4.RELEASE" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/mic-vip/2018/20180701-分布式session基于redis存储解决方案/session-demo/target/session-demo/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="session-demo/web/Web" />
+    </root>
+  </artifact>
+</component>

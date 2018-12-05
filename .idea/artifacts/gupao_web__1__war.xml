@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupao-web (1):war">
+    <output-path>$PROJECT_DIR$/gupao-springmvc/gupao-web/target</output-path>
+    <root id="archive" name="gupao-web-1.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="gupao-web (1):war exploded" />
+    </root>
+  </artifact>
+</component>

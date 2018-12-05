@@ -1,0 +1,37 @@
+
+Bsquid:S1989Ñ"%Add a "try/catch" block for "doPost".(éöõ¦ùÿÿÿÿ
+Bsquid:S1989Ñ"%Add a "try/catch" block for "doPost".(éöõ¦ùÿÿÿÿ
+Esquid:S1989ê"(Add a "try/catch" block for "getWriter".(ÈõÍÕşÿÿÿÿ
+@squid:S1989õ"(Add a "try/catch" block for "getWriter".(ÄÅıª
+u
+squid:S135Œ"YReduce the total number of break and continue statements in this loop to use at most one.(ùïÔÜüÿÿÿÿ
+bsquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.( ”Öı
+bsquid:CommentedOutCodeLinef"<This block of commented-out lines of code should be removed.(Çµ÷Ÿ
+hsquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(Ï¬§Åıÿÿÿÿ
+hsquid:CommentedOutCodeLineÛ"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+csquid:CommentedOutCodeLineæ"<This block of commented-out lines of code should be removed.(°Şš¢
+U
+squid:S106‰"9Replace this use of System.out or System.err by a logger.(ß—­ßıÿÿÿÿ
+osquid:S2226)"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(í¬‘ê
+tsquid:S2226+"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÄÆúéúÿÿÿÿ
+osquid:S2226-"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(£èĞŞ
+osquid:S3776–"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(±ÈÍ¾ÿÿÿÿÿ
+Esquid:S1172Y".Remove this unused method parameter "context".(ìÜˆÍ
+Jsquid:S1172Z".Remove this unused method parameter "context".(’ö’€ıÿÿÿÿ
+Esquid:S1172[".Remove this unused method parameter "context".(Ôùû•
+Jsquid:S1172\".Remove this unused method parameter "context".(„¡«±ıÿÿÿÿ
+Esquid:S1172]".Remove this unused method parameter "context".(¡ÿòº
+Esquid:S1172^".Remove this unused method parameter "context".(êóªê
+Ksquid:S1172–".Remove this unused method parameter "context".(±ÈÍ¾ÿÿÿÿÿ
+=squid:S1170""!Make this final field static too.(ˆ€ƒ¦øÿÿÿÿ
+^squid:S00112ğ"FDefine and throw a dedicated exception instead of using a generic one.(²éõ~
+_squid:S00112†"FDefine and throw a dedicated exception instead of using a generic one.(”ÊêÁ
+˜squid:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÜˆÍ
+squid:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’ö’€ıÿÿÿÿ
+˜squid:S1186["€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ôùû•
+squid:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(„¡«±ıÿÿÿÿ
+˜squid:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡ÿòº
+˜squid:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(êóªê
+psquid:S00116""SRename this field "LOCATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ€ƒ¦øÿÿÿÿ
+@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

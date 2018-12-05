@@ -1,0 +1,14 @@
+
+ksquid:S1192#"ODefine a constant instead of duplicating this literal "/zk-persis-mic" 5 times.(ÅÜˆÕÿÿÿÿÿ
+O
+squid:S106 "9Replace this use of System.out or System.err by a logger.(ä„‚·
+N
+squid:S106)"9Replace this use of System.out or System.err by a logger.(´þµ
+O
+squid:S1060"9Replace this use of System.out or System.err by a logger.(÷ñ«À
+]squid:S21429"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+[squid:S21479"DCombine this catch with the one at line 55, which has the same body.(ä ¹€
+[squid:S2147;"DCombine this catch with the one at line 55, which has the same body.(¹¯Óˆ
+?squid:S11488"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148:"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148<"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

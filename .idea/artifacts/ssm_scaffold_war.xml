@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssm-scaffold:war">
+    <output-path>$PROJECT_DIR$/mic-vip/2018/20181105-shiro整合的项目/ssm-scaffold/target</output-path>
+    <root id="archive" name="scaffold.war">
+      <element id="artifact" artifact-name="ssm-scaffold:war exploded" />
+    </root>
+  </artifact>
+</component>

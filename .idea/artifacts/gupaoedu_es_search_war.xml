@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-es-search:war">
+    <output-path>$PROJECT_DIR$/tom-space/public/gupaoedu-es-search/target</output-path>
+    <root id="archive" name="gupaoedu-es-search.war">
+      <element id="artifact" artifact-name="gupaoedu-es-search:war exploded" />
+    </root>
+  </artifact>
+</component>

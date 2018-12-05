@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gupaoedu-qrcode:war exploded">
+    <output-path>$PROJECT_DIR$/tom-space/public/gupaoedu-qrcode/target/gupaoedu-qrcode</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gupaoedu-qrcode" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jp.sourceforge:QRCode:1.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/tom-space/public/gupaoedu-qrcode/target/gupaoedu-qrcode/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="gupaoedu-qrcode/web/Web" />
+    </root>
+  </artifact>
+</component>

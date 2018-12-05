@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-spring-aop:war">
+    <output-path>$PROJECT_DIR$/tom-space/public/gupaoedu-spring-aop/target</output-path>
+    <root id="archive" name="gupaoedu-spring-aop.war">
+      <element id="artifact" artifact-name="gupaoedu-spring-aop:war exploded" />
+    </root>
+  </artifact>
+</component>

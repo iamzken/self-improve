@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="session-demo:war">
+    <output-path>$PROJECT_DIR$/mic-vip/2018/20180701-分布式session基于redis存储解决方案/session-demo/target</output-path>
+    <root id="archive" name="session-demo.war">
+      <element id="artifact" artifact-name="session-demo:war exploded" />
+    </root>
+  </artifact>
+</component>

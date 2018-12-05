@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spring-webmvc-jsp:war exploded">
+    <output-path>$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-jsp/target/spring-webmvc-jsp-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spring-webmvc-jsp" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-jsp/target/spring-webmvc-jsp-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="spring-webmvc-jsp/web/Web" />
+    </root>
+  </artifact>
+</component>

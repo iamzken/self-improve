@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jsp-in-spring-boot:war">
+    <output-path>$PROJECT_DIR$/xiaomage-space/公开课/代码/jsp-in-spring-boot/target</output-path>
+    <root id="archive" name="jsp-in-spring-boot-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="jsp-in-spring-boot:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="3dsq-full" />
+        <module name="acitivemq-receiver" />
+        <module name="activemq-api" />
+        <module name="activemq-producer" />
+        <module name="activity-api" />
+        <module name="activity-provider" />
+        <module name="api" />
+        <module name="bootstrap" />
+        <module name="capital-api" />
+        <module name="capital-provider" />
+        <module name="chapter-0102 (1)" />
+        <module name="chapter-0102 (2)" />
+        <module name="chapter-0108 (1)" />
+        <module name="chapter-0108 (2)" />
+        <module name="chapter-0110" />
+        <module name="chapter-0115" />
+        <module name="chapter-0120" />
+        <module name="chapter-0123" />
+        <module name="chapter-0128" />
+        <module name="chapter-0203" />
+        <module name="chapter-0223" />
+        <module name="chapter-0306" />
+        <module name="chapter-0315" />
+        <module name="chapter-0403" />
+        <module name="chapter-0415" />
+        <module name="chapter-0509 (1)" />
+        <module name="chapter-0509 (2)" />
+        <module name="chapter-0512 (1)" />
+        <module name="chapter-0512 (2)" />
+        <module name="chapter-0520 (1)" />
+        <module name="chapter-0520 (2)" />
+        <module name="chapter-0523 (1) (com.gupaoedu.michael)" />
+        <module name="chapter-0523 (2)" />
+        <module name="chapter-0523 (3)" />
+        <module name="chapter-0601 (1)" />
+        <module name="chapter-0601 (2)" />
+        <module name="chapter-0713 (1)" />
+        <module name="chapter-0713 (2)" />
+        <module name="chapter-0903 (1)" />
+        <module name="chapter-0903 (2)" />
+        <module name="chapter-0913 (1)" />
+        <module name="chapter-0913 (2)" />
+        <module name="chapter-1012 (1)" />
+        <module name="chapter-1012 (2)" />
+        <module name="chapter-1104 (1)" />
+        <module name="chapter-1104 (2)" />
+        <module name="chapter-1109 (1)" />
+        <module name="chapter-1109 (2)" />
+        <module name="chapter-1113 (1)" />
+        <module name="chapter-1113 (2)" />
+        <module name="chapter-1218 (1)" />
+        <module name="chapter-1218 (2)" />
+        <module name="chapter-1219 (1)" />
+        <module name="chapter-1219 (2)" />
+        <module name="chapter-1223 (1)" />
+        <module name="chapter-1223 (2)" />
+        <module name="chapter2" />
+        <module name="config-server" />
+        <module name="core-common-doc" />
+        <module name="core-maven-plugin-doc" />
+        <module name="DataBaseDriver" />
+        <module name="dubbo (1)" />
+        <module name="dubbo (2)" />
+        <module name="dubbo (3)" />
+        <module name="dubbo (4)" />
+        <module name="dubbo-admin (1)" />
+        <module name="dubbo-admin (2)" />
+        <module name="dubbo-client (1)" />
+        <module name="dubbo-client (2)" />
+        <module name="dubbo-cluster (1)" />
+        <module name="dubbo-cluster (2)" />
+        <module name="dubbo-common (1)" />
+        <module name="dubbo-common (2)" />
+        <module name="dubbo-config-api (1)" />
+        <module name="dubbo-config-api (2)" />
+        <module name="dubbo-config-spring (1)" />
+        <module name="dubbo-config-spring (2)" />
+        <module name="dubbo-container-api (1)" />
+        <module name="dubbo-container-api (2)" />
+        <module name="dubbo-container-jetty (1)" />
+        <module name="dubbo-container-jetty (2)" />
+        <module name="dubbo-container-log4j (1)" />
+        <module name="dubbo-container-log4j (2)" />
+        <module name="dubbo-container-logback (1)" />
+        <module name="dubbo-container-logback (2)" />
+        <module name="dubbo-container-spring (1)" />
+        <module name="dubbo-container-spring (2)" />
+        <module name="dubbo-demo-api (1)" />
+        <module name="dubbo-demo-api (2)" />
+        <module name="dubbo-demo-consumer (1)" />
+        <module name="dubbo-demo-consumer (2)" />
+        <module name="dubbo-demo-provider (1)" />
+        <module name="dubbo-demo-provider (2)" />
+        <module name="dubbo-filter-cache (1)" />
+        <module name="dubbo-filter-cache (2)" />
+        <module name="dubbo-filter-validation (1)" />
+        <module name="dubbo-filter-validation (2)" />
+        <module name="dubbo-monitor-api (1)" />
+        <module name="dubbo-monitor-api (2)" />
+        <module name="dubbo-monitor-default (1)" />
+        <module name="dubbo-monitor-default (2)" />
+        <module name="dubbo-monitor-simple (1)" />
+        <module name="dubbo-monitor-simple (2)" />
+        <module name="dubbo-registry-api (1)" />
+        <module name="dubbo-registry-api (2)" />
+        <module name="dubbo-registry-default (1)" />
+        <module name="dubbo-registry-default (2)" />
+        <module name="dubbo-registry-multicast (1)" />
+        <module name="dubbo-registry-multicast (2)" />
+        <module name="dubbo-registry-redis (1)" />
+        <module name="dubbo-registry-redis (2)" />
+        <module name="dubbo-registry-simple (1)" />
+        <module name="dubbo-registry-simple (2)" />
+        <module name="dubbo-registry-zookeeper (1)" />
+        <module name="dubbo-registry-zookeeper (2)" />
+        <module name="dubbo-remoting-api (1)" />
+        <module name="dubbo-remoting-api (2)" />
+        <module name="dubbo-remoting-grizzly (1)" />
+        <module name="dubbo-remoting-grizzly (2)" />
+        <module name="dubbo-remoting-http (1)" />
+        <module name="dubbo-remoting-http (2)" />
+        <module name="dubbo-remoting-mina (1)" />
+        <module name="dubbo-remoting-mina (2)" />
+        <module name="dubbo-remoting-netty (1)" />
+        <module name="dubbo-remoting-netty (2)" />
+        <module name="dubbo-remoting-p2p (1)" />
+        <module name="dubbo-remoting-p2p (2)" />
+        <module name="dubbo-remoting-zookeeper (1)" />
+        <module name="dubbo-remoting-zookeeper (2)" />
+        <module name="dubbo-rpc-api (1)" />
+        <module name="dubbo-rpc-api (2)" />
+        <module name="dubbo-rpc-default (1)" />
+        <module name="dubbo-rpc-default (2)" />
+        <module name="dubbo-rpc-hessian (1)" />
+        <module name="dubbo-rpc-hessian (2)" />
+        <module name="dubbo-rpc-http (1)" />
+        <module name="dubbo-rpc-http (2)" />
+        <module name="dubbo-rpc-injvm (1)" />
+        <module name="dubbo-rpc-injvm (2)" />
+        <module name="dubbo-rpc-memcached (1)" />
+        <module name="dubbo-rpc-memcached (2)" />
+        <module name="dubbo-rpc-redis (1)" />
+        <module name="dubbo-rpc-redis (2)" />
+        <module name="dubbo-rpc-rmi (1)" />
+        <module name="dubbo-rpc-rmi (2)" />
+        <module name="dubbo-rpc-thrift (1)" />
+        <module name="dubbo-rpc-thrift (2)" />
+        <module name="dubbo-rpc-webservice (1)" />
+        <module name="dubbo-rpc-webservice (2)" />
+        <module name="dubbo-test-benchmark (1)" />
+        <module name="dubbo-test-benchmark (2)" />
+        <module name="dubbo-test-compatibility (1)" />
+        <module name="dubbo-test-compatibility (2)" />
+        <module name="dubbo-test-examples (1)" />
+        <module name="dubbo-test-examples (2)" />
+        <module name="dubbo-test-integration (1)" />
+        <module name="dubbo-test-integration (2)" />
+        <module name="eurekaclient" />
+        <module name="eurekaclientcopy" />
+        <module name="eurekaserver" />
+        <module name="gp-concurrent" />
+        <module name="gpmall-activity" />
+        <module name="gpmall-cashier" />
+        <module name="gpmall-common" />
+        <module name="gpmall-sso" />
+        <module name="gupao-biz (1)" />
+        <module name="gupao-biz (2)" />
+        <module name="gupao-common-lib (1)" />
+        <module name="gupao-common-lib (2)" />
+        <module name="gupao-dal (1)" />
+        <module name="gupao-dal (2)" />
+        <module name="gupao-generator (1)" />
+        <module name="gupao-generator (2)" />
+        <module name="gupao-plugin" />
+        <module name="gupao-remote-invoker (1)" />
+        <module name="gupao-remote-invoker (2)" />
+        <module name="gupao-standalone" />
+        <module name="gupao-web (1)" />
+        <module name="gupao-web (2)" />
+        <module name="gupaoedu-crawler" />
+        <module name="gupaoedu-dubbo-api" />
+        <module name="gupaoedu-dubbo-consumer" />
+        <module name="gupaoedu-dubbo-provider" />
+        <module name="gupaoedu-es-search" />
+        <module name="gupaoedu-jdbc-orm" />
+        <module name="gupaoedu-maven-plugin-doc-demo" />
+        <module name="gupaoedu-mvcframework" />
+        <module name="gupaoedu-mybatis" />
+        <module name="gupaoedu-qrcode" />
+        <module name="gupaoedu-spring-aop" />
+        <module name="gupaoedu-spring-quartz" />
+        <module name="gupaoedu-spring5-demo" />
+        <module name="gupaoedu-upload" />
+        <module name="gupaoedu-vip-io" />
+        <module name="gupaoedu-vip-mongo" />
+        <module name="gupaoedu-vip-mongo-explorer" />
+        <module name="gupaoedu-vip-mongo-morphia (1)" />
+        <module name="gupaoedu-vip-mongo-morphia (2)" />
+        <module name="gupaoedu-vip-mongo-orm" />
+        <module name="gupaoedu-vip-mongo-transaction" />
+        <module name="gupaoedu-vip-netty" />
+        <module name="gupaoedu-vip-netty-catalina" />
+        <module name="gupaoedu-vip-netty-chat" />
+        <module name="gupaoedu-vip-netty-rpc" />
+        <module name="gupaoedu-vip-spring" />
+        <module name="gupaoedu-vip-spring-aop" />
+        <module name="gupaoedu-vip-spring-orm" />
+        <module name="gupaoedu-vip-spring-transaction" />
+        <module name="gupaoedu-vip-springaop" />
+        <module name="gupaoedu-vip-springjdbc" />
+        <module name="gupaoedu-vip-springmvc" />
+        <module name="gupaoedu-vip-transcation" />
+        <module name="hessian-lite (1)" />
+        <module name="hessian-lite (2)" />
+        <module name="java-i18n-demo" />
+        <module name="java-resource-demo" />
+        <module name="jsp-in-spring" />
+        <module name="jsp-in-spring-boot" />
+        <module name="jvm-demo1" />
+        <module name="kafka-demo (1)" />
+        <module name="kafka-demo (2)" />
+        <module name="lion-api" />
+        <module name="lion-boot" />
+        <module name="lion-cacher" />
+        <module name="lion-client" />
+        <module name="lion-common" />
+        <module name="lion-core" />
+        <module name="lion-monitor" />
+        <module name="lion-network" />
+        <module name="lion-registion" />
+        <module name="lion-tools" />
+        <module name="maven-archiver (1)" />
+        <module name="maven-archiver (10)" />
+        <module name="maven-archiver (11)" />
+        <module name="maven-archiver (12)" />
+        <module name="maven-archiver (2)" />
+        <module name="maven-archiver (3)" />
+        <module name="maven-archiver (4)" />
+        <module name="maven-archiver (5)" />
+        <module name="maven-archiver (6)" />
+        <module name="maven-archiver (7)" />
+        <module name="maven-archiver (8)" />
+        <module name="maven-archiver (9)" />
+        <module name="minidubbo-client" />
+        <module name="minidubbo-server" />
+        <module name="MysqlDriver" />
+        <module name="nettydemo" />
+        <module name="nettystudy" />
+        <module name="nginx-demo" />
+        <module name="oop-design" />
+        <module name="OracleDriver" />
+        <module name="order-api" />
+        <module name="order-provider" />
+        <module name="pay-api" />
+        <module name="pay-provider" />
+        <module name="poidemo" />
+        <module name="protocol-demo" />
+        <module name="provider" />
+        <module name="quartz-standalone" />
+        <module name="rabbitmq-javaapi" />
+        <module name="reactive-reactor" />
+        <module name="reactor" />
+        <module name="redis-bloom-filter" />
+        <module name="rmi-client (1)" />
+        <module name="rmi-client (2)" />
+        <module name="rmi-server (1)" />
+        <module name="rmi-server (2)" />
+        <module name="serializer-demo" />
+        <module name="server-api (1)" />
+        <module name="server-api (2)" />
+        <module name="server-provider (1)" />
+        <module name="server-provider (2)" />
+        <module name="service-feign" />
+        <module name="service-ribbon" />
+        <module name="service-zuul" />
+        <module name="servlet-in-spring" />
+        <module name="session-demo" />
+        <module name="spring-activemq" />
+        <module name="spring-boot-jsp" />
+        <module name="spring-boot-thymeleaf" />
+        <module name="spring-boot-velocity" />
+        <module name="spring-cloud-bus-demo" />
+        <module name="spring-quartz" />
+        <module name="spring-rabbitmq" />
+        <module name="spring-vip-spring" />
+        <module name="spring-webflux-demo" />
+        <module name="spring-webmvc-autoconfig" />
+        <module name="spring-webmvc-jsp" />
+        <module name="spring-xml-extension" />
+        <module name="spring5-test-demo" />
+        <module name="springboot-activemq" />
+        <module name="springboot-elasticjob" />
+        <module name="springboot-mq" />
+        <module name="springboot-quartz" />
+        <module name="springboot-rabbit-consumer" />
+        <module name="springboot-rabbit-producer" />
+        <module name="SpringBootMybatisDemo" />
+        <module name="ssm-scaffold" />
+        <module name="study-source-code" />
+        <module name="token-client (1)" />
+        <module name="token-client (2)" />
+        <module name="token-server (1)" />
+        <module name="token-server (2)" />
+        <module name="user (1) (com.gupaoedu.dubbo.demo)" />
+        <module name="user (2) (com.gupao)" />
+        <module name="user-api" />
+        <module name="user-provider" />
+        <module name="user-service (2) (com.gupao)" />
+        <module name="vertx-demo" />
+        <module name="vip-0722" />
+        <module name="vip-0723" />
+        <module name="vip-0729" />
+        <module name="vip-0730" />
+        <module name="vip-0805" />
+        <module name="vip-0809" />
+        <module name="zookeeer-02" />
+        <module name="zookeeper-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="3dsq-full" target="1.7" />
+      <module name="acitivemq-receiver" target="1.7" />
+      <module name="activemq-api" target="1.6" />
+      <module name="activemq-producer" target="1.7" />
+      <module name="activity-api" target="1.8" />
+      <module name="activity-provider" target="1.8" />
+      <module name="activity-service" target="1.8" />
+      <module name="api" target="1.5" />
+      <module name="bootstrap" target="9" />
+      <module name="capital-api" target="1.8" />
+      <module name="capital-provider" target="1.8" />
+      <module name="chapter-0102 (1)" target="1.8" />
+      <module name="chapter-0102 (2)" target="1.8" />
+      <module name="chapter-0108 (1)" target="1.8" />
+      <module name="chapter-0108 (2)" target="1.8" />
+      <module name="chapter-0110" target="1.8" />
+      <module name="chapter-0115" target="1.8" />
+      <module name="chapter-0120" target="1.8" />
+      <module name="chapter-0123" target="1.8" />
+      <module name="chapter-0128" target="1.8" />
+      <module name="chapter-0203" target="1.8" />
+      <module name="chapter-0223" target="1.8" />
+      <module name="chapter-0306" target="1.8" />
+      <module name="chapter-0315" target="1.8" />
+      <module name="chapter-0403" target="1.8" />
+      <module name="chapter-0415" target="1.8" />
+      <module name="chapter-0509 (1)" target="1.8" />
+      <module name="chapter-0509 (2)" target="1.8" />
+      <module name="chapter-0512 (1)" target="1.8" />
+      <module name="chapter-0512 (2)" target="1.8" />
+      <module name="chapter-0516 (1)" target="1.8" />
+      <module name="chapter-0516 (2)" target="1.8" />
+      <module name="chapter-0520 (1)" target="1.8" />
+      <module name="chapter-0520 (2)" target="1.8" />
+      <module name="chapter-0523 (1) (com.gupaoedu.michael)" target="1.8" />
+      <module name="chapter-0523 (2)" target="1.8" />
+      <module name="chapter-0523 (3)" target="1.8" />
+      <module name="chapter-0601 (1)" target="1.8" />
+      <module name="chapter-0601 (2)" target="1.8" />
+      <module name="chapter-0713 (1)" target="1.8" />
+      <module name="chapter-0713 (2)" target="1.8" />
+      <module name="chapter-0903 (1)" target="1.8" />
+      <module name="chapter-0903 (2)" target="1.8" />
+      <module name="chapter-0913 (1)" target="1.8" />
+      <module name="chapter-0913 (2)" target="1.8" />
+      <module name="chapter-1012 (1)" target="1.8" />
+      <module name="chapter-1012 (2)" target="1.8" />
+      <module name="chapter-1104 (1)" target="1.8" />
+      <module name="chapter-1104 (2)" target="1.8" />
+      <module name="chapter-1109 (1)" target="1.8" />
+      <module name="chapter-1109 (2)" target="1.8" />
+      <module name="chapter-1113 (1)" target="1.8" />
+      <module name="chapter-1113 (2)" target="1.8" />
+      <module name="chapter-1218 (1)" target="1.8" />
+      <module name="chapter-1218 (2)" target="1.8" />
+      <module name="chapter-1219 (1)" target="1.8" />
+      <module name="chapter-1219 (2)" target="1.8" />
+      <module name="chapter-1223 (1)" target="1.8" />
+      <module name="chapter-1223 (2)" target="1.8" />
+      <module name="chapter2" target="1.5" />
+      <module name="config-server" target="1.8" />
+      <module name="core-common-doc" target="1.6" />
+      <module name="core-maven-plugin-doc" target="1.5" />
+      <module name="DataBaseDriver" target="1.7" />
+      <module name="dubbo (1)" target="1.5" />
+      <module name="dubbo (2)" target="1.5" />
+      <module name="dubbo (3)" target="1.5" />
+      <module name="dubbo (4)" target="1.5" />
+      <module name="dubbo-admin (1)" target="1.5" />
+      <module name="dubbo-admin (2)" target="1.5" />
+      <module name="dubbo-client (1)" target="1.7" />
+      <module name="dubbo-client (2)" target="1.7" />
+      <module name="dubbo-cluster (1)" target="1.5" />
+      <module name="dubbo-cluster (2)" target="1.5" />
+      <module name="dubbo-common (1)" target="1.5" />
+      <module name="dubbo-common (2)" target="1.5" />
+      <module name="dubbo-config (1)" target="1.5" />
+      <module name="dubbo-config (2)" target="1.5" />
+      <module name="dubbo-config-api (1)" target="1.5" />
+      <module name="dubbo-config-api (2)" target="1.5" />
+      <module name="dubbo-config-spring (1)" target="1.5" />
+      <module name="dubbo-config-spring (2)" target="1.5" />
+      <module name="dubbo-container (1)" target="1.5" />
+      <module name="dubbo-container (2)" target="1.5" />
+      <module name="dubbo-container-api (1)" target="1.5" />
+      <module name="dubbo-container-api (2)" target="1.5" />
+      <module name="dubbo-container-jetty (1)" target="1.5" />
+      <module name="dubbo-container-jetty (2)" target="1.5" />
+      <module name="dubbo-container-log4j (1)" target="1.5" />
+      <module name="dubbo-container-log4j (2)" target="1.5" />
+      <module name="dubbo-container-logback (1)" target="1.5" />
+      <module name="dubbo-container-logback (2)" target="1.5" />
+      <module name="dubbo-container-spring (1)" target="1.5" />
+      <module name="dubbo-container-spring (2)" target="1.5" />
+      <module name="dubbo-demo (1)" target="1.5" />
+      <module name="dubbo-demo (2)" target="1.5" />
+      <module name="dubbo-demo-api (1)" target="1.5" />
+      <module name="dubbo-demo-api (2)" target="1.5" />
+      <module name="dubbo-demo-consumer (1)" target="1.5" />
+      <module name="dubbo-demo-consumer (2)" target="1.5" />
+      <module name="dubbo-demo-provider (1)" target="1.5" />
+      <module name="dubbo-demo-provider (2)" target="1.5" />
+      <module name="dubbo-filter (1)" target="1.5" />
+      <module name="dubbo-filter (2)" target="1.5" />
+      <module name="dubbo-filter-cache (1)" target="1.5" />
+      <module name="dubbo-filter-cache (2)" target="1.5" />
+      <module name="dubbo-filter-validation (1)" target="1.5" />
+      <module name="dubbo-filter-validation (2)" target="1.5" />
+      <module name="dubbo-monitor (1)" target="1.5" />
+      <module name="dubbo-monitor (2)" target="1.5" />
+      <module name="dubbo-monitor-api (1)" target="1.5" />
+      <module name="dubbo-monitor-api (2)" target="1.5" />
+      <module name="dubbo-monitor-default (1)" target="1.5" />
+      <module name="dubbo-monitor-default (2)" target="1.5" />
+      <module name="dubbo-monitor-simple (1)" target="1.5" />
+      <module name="dubbo-monitor-simple (2)" target="1.5" />
+      <module name="dubbo-parent (1)" target="1.5" />
+      <module name="dubbo-parent (2)" target="1.5" />
+      <module name="dubbo-registry (1)" target="1.5" />
+      <module name="dubbo-registry (2)" target="1.5" />
+      <module name="dubbo-registry-api (1)" target="1.5" />
+      <module name="dubbo-registry-api (2)" target="1.5" />
+      <module name="dubbo-registry-default (1)" target="1.5" />
+      <module name="dubbo-registry-default (2)" target="1.5" />
+      <module name="dubbo-registry-multicast (1)" target="1.5" />
+      <module name="dubbo-registry-multicast (2)" target="1.5" />
+      <module name="dubbo-registry-redis (1)" target="1.5" />
+      <module name="dubbo-registry-redis (2)" target="1.5" />
+      <module name="dubbo-registry-simple (1)" target="1.5" />
+      <module name="dubbo-registry-simple (2)" target="1.5" />
+      <module name="dubbo-registry-zookeeper (1)" target="1.5" />
+      <module name="dubbo-registry-zookeeper (2)" target="1.5" />
+      <module name="dubbo-remoting (1)" target="1.5" />
+      <module name="dubbo-remoting (2)" target="1.5" />
+      <module name="dubbo-remoting-api (1)" target="1.5" />
+      <module name="dubbo-remoting-api (2)" target="1.5" />
+      <module name="dubbo-remoting-grizzly (1)" target="1.5" />
+      <module name="dubbo-remoting-grizzly (2)" target="1.5" />
+      <module name="dubbo-remoting-http (1)" target="1.5" />
+      <module name="dubbo-remoting-http (2)" target="1.5" />
+      <module name="dubbo-remoting-mina (1)" target="1.5" />
+      <module name="dubbo-remoting-mina (2)" target="1.5" />
+      <module name="dubbo-remoting-netty (1)" target="1.5" />
+      <module name="dubbo-remoting-netty (2)" target="1.5" />
+      <module name="dubbo-remoting-p2p (1)" target="1.5" />
+      <module name="dubbo-remoting-p2p (2)" target="1.5" />
+      <module name="dubbo-remoting-zookeeper (1)" target="1.5" />
+      <module name="dubbo-remoting-zookeeper (2)" target="1.5" />
+      <module name="dubbo-rpc (1)" target="1.5" />
+      <module name="dubbo-rpc (2)" target="1.5" />
+      <module name="dubbo-rpc-api (1)" target="1.5" />
+      <module name="dubbo-rpc-api (2)" target="1.5" />
+      <module name="dubbo-rpc-default (1)" target="1.5" />
+      <module name="dubbo-rpc-default (2)" target="1.5" />
+      <module name="dubbo-rpc-hessian (1)" target="1.5" />
+      <module name="dubbo-rpc-hessian (2)" target="1.5" />
+      <module name="dubbo-rpc-http (1)" target="1.5" />
+      <module name="dubbo-rpc-http (2)" target="1.5" />
+      <module name="dubbo-rpc-injvm (1)" target="1.5" />
+      <module name="dubbo-rpc-injvm (2)" target="1.5" />
+      <module name="dubbo-rpc-memcached (1)" target="1.5" />
+      <module name="dubbo-rpc-memcached (2)" target="1.5" />
+      <module name="dubbo-rpc-redis (1)" target="1.5" />
+      <module name="dubbo-rpc-redis (2)" target="1.5" />
+      <module name="dubbo-rpc-rmi (1)" target="1.5" />
+      <module name="dubbo-rpc-rmi (2)" target="1.5" />
+      <module name="dubbo-rpc-thrift (1)" target="1.5" />
+      <module name="dubbo-rpc-thrift (2)" target="1.5" />
+      <module name="dubbo-rpc-webservice (1)" target="1.5" />
+      <module name="dubbo-rpc-webservice (2)" target="1.5" />
+      <module name="dubbo-server (1)" target="1.7" />
+      <module name="dubbo-server (2)" target="1.7" />
+      <module name="dubbo-simple (1)" target="1.5" />
+      <module name="dubbo-simple (2)" target="1.5" />
+      <module name="dubbo-test (1)" target="1.5" />
+      <module name="dubbo-test (2)" target="1.5" />
+      <module name="dubbo-test-benchmark (1)" target="1.6" />
+      <module name="dubbo-test-benchmark (2)" target="1.6" />
+      <module name="dubbo-test-compatibility (1)" target="1.5" />
+      <module name="dubbo-test-compatibility (2)" target="1.5" />
+      <module name="dubbo-test-examples (1)" target="1.5" />
+      <module name="dubbo-test-examples (2)" target="1.5" />
+      <module name="dubbo-test-integration (1)" target="1.5" />
+      <module name="dubbo-test-integration (2)" target="1.5" />
+      <module name="eurekaclient" target="1.8" />
+      <module name="eurekaclientcopy" target="1.8" />
+      <module name="eurekaserver" target="1.8" />
+      <module name="gp-concurrent" target="1.7" />
+      <module name="gpmall-activity" target="1.7" />
+      <module name="gpmall-cashier" target="1.8" />
+      <module name="gpmall-common" target="1.7" />
+      <module name="gpmall-dubbo" target="1.7" />
+      <module name="gpmall-parent" target="1.7" />
+      <module name="gpmall-sso" target="1.7" />
+      <module name="gpmall-web" target="1.7" />
+      <module name="gupao-biz (1)" target="1.8" />
+      <module name="gupao-biz (2)" target="1.5" />
+      <module name="gupao-common-lib (1)" target="1.8" />
+      <module name="gupao-common-lib (2)" target="1.5" />
+      <module name="gupao-dal (1)" target="1.8" />
+      <module name="gupao-dal (2)" target="1.5" />
+      <module name="gupao-generator (1)" target="1.8" />
+      <module name="gupao-generator (2)" target="1.5" />
+      <module name="gupao-plugin" target="1.6" />
+      <module name="gupao-remote-invoker (1)" target="1.8" />
+      <module name="gupao-remote-invoker (2)" target="1.5" />
+      <module name="gupao-springmvc (1)" target="1.8" />
+      <module name="gupao-springmvc (2)" target="1.5" />
+      <module name="gupao-standalone" target="1.8" />
+      <module name="gupao-web (1)" target="1.8" />
+      <module name="gupao-web (2)" target="1.5" />
+      <module name="gupaoedu-crawler" target="1.6" />
+      <module name="gupaoedu-dubbo-api" target="1.6" />
+      <module name="gupaoedu-dubbo-consumer" target="1.6" />
+      <module name="gupaoedu-dubbo-provider" target="1.6" />
+      <module name="gupaoedu-es-search" target="1.6" />
+      <module name="gupaoedu-jdbc-orm" target="1.6" />
+      <module name="gupaoedu-maven-plugin-doc-demo" target="1.6" />
+      <module name="gupaoedu-mvcframework" target="1.6" />
+      <module name="gupaoedu-mybatis" target="1.8" />
+      <module name="gupaoedu-qrcode" target="1.6" />
+      <module name="gupaoedu-spring-aop" target="1.6" />
+      <module name="gupaoedu-spring-quartz" target="1.6" />
+      <module name="gupaoedu-spring5-demo" target="1.8" />
+      <module name="gupaoedu-token (1)" target="1.8" />
+      <module name="gupaoedu-token (2)" target="1.8" />
+      <module name="gupaoedu-upload" target="1.6" />
+      <module name="gupaoedu-vip-io" target="1.6" />
+      <module name="gupaoedu-vip-mongo" target="1.5" />
+      <module name="gupaoedu-vip-mongo-explorer" target="1.8" />
+      <module name="gupaoedu-vip-mongo-morphia (1)" target="1.5" />
+      <module name="gupaoedu-vip-mongo-morphia (2)" target="1.5" />
+      <module name="gupaoedu-vip-mongo-orm" target="1.5" />
+      <module name="gupaoedu-vip-mongo-transaction" target="1.5" />
+      <module name="gupaoedu-vip-netty" target="1.6" />
+      <module name="gupaoedu-vip-netty-catalina" target="1.6" />
+      <module name="gupaoedu-vip-netty-chat" target="1.6" />
+      <module name="gupaoedu-vip-netty-rpc" target="1.6" />
+      <module name="gupaoedu-vip-spring" target="1.6" />
+      <module name="gupaoedu-vip-spring-aop" target="1.7" />
+      <module name="gupaoedu-vip-spring-orm" target="1.7" />
+      <module name="gupaoedu-vip-spring-transaction" target="1.7" />
+      <module name="gupaoedu-vip-springaop" target="1.6" />
+      <module name="gupaoedu-vip-springjdbc" target="1.6" />
+      <module name="gupaoedu-vip-springmvc" target="1.6" />
+      <module name="gupaoedu-vip-transcation" target="1.6" />
+      <module name="hessian-lite (1)" target="1.5" />
+      <module name="hessian-lite (2)" target="1.5" />
+      <module name="java-i18n-demo" target="1.8" />
+      <module name="java-resource-demo" target="1.8" />
+      <module name="java9-module-demo" target="9" />
+      <module name="jsp-in-spring" target="1.5" />
+      <module name="jsp-in-spring-boot" target="1.8" />
+      <module name="jvm-demo1" target="1.8" />
+      <module name="kafka-demo (1)" target="1.7" />
+      <module name="kafka-demo (2)" target="1.7" />
+      <module name="lion" target="1.8" />
+      <module name="lion-api" target="1.8" />
+      <module name="lion-boot" target="1.8" />
+      <module name="lion-cacher" target="1.8" />
+      <module name="lion-client" target="1.8" />
+      <module name="lion-common" target="1.8" />
+      <module name="lion-core" target="1.8" />
+      <module name="lion-monitor" target="1.8" />
+      <module name="lion-network" target="1.8" />
+      <module name="lion-registion" target="1.8" />
+      <module name="lion-tools" target="1.8" />
+      <module name="maven-archiver (1)" target="1.5" />
+      <module name="maven-archiver (10)" target="1.5" />
+      <module name="maven-archiver (11)" target="1.5" />
+      <module name="maven-archiver (12)" target="1.5" />
+      <module name="maven-archiver (2)" target="1.5" />
+      <module name="maven-archiver (3)" target="1.5" />
+      <module name="maven-archiver (4)" target="1.5" />
+      <module name="maven-archiver (5)" target="1.5" />
+      <module name="maven-archiver (6)" target="1.5" />
+      <module name="maven-archiver (7)" target="1.5" />
+      <module name="maven-archiver (8)" target="1.5" />
+      <module name="maven-archiver (9)" target="1.5" />
+      <module name="michael-public (1)" target="1.8" />
+      <module name="michael-public (2)" target="1.8" />
+      <module name="michael-public-2018" target="1.8" />
+      <module name="michael-vip" target="1.5" />
+      <module name="minidubbo-client" target="1.7" />
+      <module name="minidubbo-server" target="1.7" />
+      <module name="MysqlDriver" target="1.7" />
+      <module name="nettydemo" target="1.7" />
+      <module name="nettystudy" target="1.7" />
+      <module name="nginx-demo" target="1.8" />
+      <module name="oop-design" target="1.6" />
+      <module name="OracleDriver" target="1.7" />
+      <module name="order-api" target="1.8" />
+      <module name="order-provider" target="1.8" />
+      <module name="pay" target="1.5" />
+      <module name="pay-api" target="1.8" />
+      <module name="pay-provider" target="1.8" />
+      <module name="pay-service" target="1.8" />
+      <module name="poidemo" target="1.5" />
+      <module name="protocol-demo" target="1.7" />
+      <module name="provider" target="1.5" />
+      <module name="quartz-standalone" target="1.5" />
+      <module name="rabbitmq-javaapi" target="1.5" />
+      <module name="reactive-reactor" target="1.8" />
+      <module name="reactor" target="1.5" />
+      <module name="redis-bloom-filter" target="1.8" />
+      <module name="rmi-client (1)" target="1.7" />
+      <module name="rmi-client (2)" target="1.7" />
+      <module name="rmi-server (1)" target="1.8" />
+      <module name="rmi-server (2)" target="1.8" />
+      <module name="serializer-demo" target="1.7" />
+      <module name="server-api (1)" target="1.7" />
+      <module name="server-api (2)" target="1.7" />
+      <module name="server-provider (1)" target="1.7" />
+      <module name="server-provider (2)" target="1.7" />
+      <module name="service-feign" target="1.8" />
+      <module name="service-ribbon" target="1.8" />
+      <module name="service-zuul" target="1.8" />
+      <module name="servlet-in-spring" target="1.5" />
+      <module name="session-demo" target="1.7" />
+      <module name="spring-activemq" target="1.6" />
+      <module name="spring-boot-jsp" target="1.8" />
+      <module name="spring-boot-thymeleaf" target="1.8" />
+      <module name="spring-boot-velocity" target="1.8" />
+      <module name="spring-cloud-bus-demo" target="1.8" />
+      <module name="spring-quartz" target="1.5" />
+      <module name="spring-rabbitmq" target="1.5" />
+      <module name="spring-vip-spring" target="1.6" />
+      <module name="spring-webflux-demo" target="1.8" />
+      <module name="spring-webmvc-autoconfig" target="1.5" />
+      <module name="spring-webmvc-jsp" target="1.8" />
+      <module name="spring-xml-extension" target="1.8" />
+      <module name="spring5-test-demo" target="1.8" />
+      <module name="springboot-activemq" target="1.8" />
+      <module name="springboot-demo" target="1.5" />
+      <module name="springboot-elasticjob" target="1.8" />
+      <module name="springboot-mq" target="1.8" />
+      <module name="springboot-quartz" target="1.8" />
+      <module name="springboot-rabbit" target="1.5" />
+      <module name="springboot-rabbit-consumer" target="1.8" />
+      <module name="springboot-rabbit-producer" target="1.8" />
+      <module name="SpringBootMybatisDemo" target="1.8" />
+      <module name="ssm-scaffold" target="1.5" />
+      <module name="study-source-code" target="1.8" />
+      <module name="tcc-capital" target="1.8" />
+      <module name="tcc-order" target="1.8" />
+      <module name="token-client (1)" target="1.8" />
+      <module name="token-client (2)" target="1.8" />
+      <module name="token-server (1)" target="1.8" />
+      <module name="token-server (2)" target="1.8" />
+      <module name="user (1) (com.gupaoedu.dubbo.demo)" target="1.5" />
+      <module name="user (2) (com.gupao)" target="9" />
+      <module name="user-api" target="1.8" />
+      <module name="user-provider" target="1.8" />
+      <module name="user-service (1) (com.gupaoedu.user)" target="1.8" />
+      <module name="user-service (2) (com.gupao)" target="9" />
+      <module name="vertx-demo" target="1.8" />
+      <module name="vip-0722" target="1.8" />
+      <module name="vip-0723" target="1.5" />
+      <module name="vip-0729" target="1.5" />
+      <module name="vip-0730" target="1.8" />
+      <module name="vip-0805" target="1.8" />
+      <module name="vip-0809" target="1.8" />
+      <module name="zookeeer-02" target="8" />
+      <module name="zookeeper-demo" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

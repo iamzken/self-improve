@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="3dsq-full:war">
+    <output-path>$PROJECT_DIR$/tom-space/Tom老师真实项目/3dsq-full/target</output-path>
+    <root id="archive" name="3dsq-full.war">
+      <element id="artifact" artifact-name="3dsq-full:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA">
+    <option name="configuration">
+      <map>
+        <entry key="checkstyle-version" value="8.11" />
+        <entry key="copy-libs" value="true" />
+        <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
+        <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
+        <entry key="scan-before-checkin" value="false" />
+        <entry key="scanscope" value="JavaOnly" />
+        <entry key="suppress-errors" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="CheckStyle-IDEA-workspace">
+    <option name="configuration">
+      <map>
+        <entry key="last-active-plugin-version" value="5.21.1" />
+      </map>
+    </option>
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/gupao-springmvc/gupao-web" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2017/vip-0730" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2017/vip-nginx/nginx-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2018/20180613-揭开分布式服务治理Dubbo的神秘面纱/dubbo-master/dubbo-admin" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2018/20180623-Dubbo源码分析/dubbo-master/dubbo-admin" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2018/20180701-分布式session基于redis存储解决方案/session-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/mic-vip/2018/20181105-shiro整合的项目/ssm-scaffold" />
+    <file type="web" url="file://$PROJECT_DIR$/michael-public/公开课代码/chapter-0523" />
+    <file type="web" url="file://$PROJECT_DIR$/michael-public/公开课代码/chapter-1228/gupaoedu-token/token-server" />
+    <file type="web" url="file://$PROJECT_DIR$/michael-public/公开课代码/michael-public/chapter-0523" />
+    <file type="web" url="file://$PROJECT_DIR$/michael-public/公开课代码/michael-public/chapter-1228/gupaoedu-token/token-server" />
+    <file type="web" url="file://$PROJECT_DIR$/qingshan-space/public/quartz-demo/spring-quartz" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-crawler" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-es-search" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-jdbc-orm" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-maven-plugin/gupaoedu-maven-plugin-doc-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-mvcframework" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-qrcode" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-spring-aop" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/public/gupaoedu-upload" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/Tom老师真实项目/3dsq-full" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springaop" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springjdbc" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springmvc" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-transaction" />
+    <file type="web" url="file://$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring5-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/vip-project-space/gpmall-activity" />
+    <file type="web" url="file://$PROJECT_DIR$/vip-project-space/gpmall-cashier" />
+    <file type="web" url="file://$PROJECT_DIR$/vip-project-space/gpmall-sso" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/jsp-in-spring" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/jsp-in-spring-boot" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/servlet-in-spring" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-boot-jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-autoconfig" />
+    <file type="web" url="file://$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-jsp" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/mic-vip/2017/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2017/vip-kafka/chapter2/chapter2/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2017/vip-nginx/nginx-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180623-Dubbo源码分析/dubbo-master/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180623-Dubbo源码分析/dubbo-master/dubbo-maven/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20181015-分布式事务的解决方案/tcc-order/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20181015-分布式事务的解决方案/tcc-capital/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20181105-shiro整合的项目/ssm-scaffold/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180523-分布式架构设计课程源码/chapter-0523/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180711-分布式消息通信Kafka/kafka-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180714-分布式消息通信kafka/kafka-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180526-分布式系统的基石TCP协议/protocol-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180602-分布式通信框架RMI原理分析/rmi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180602-分布式通信框架RMI原理分析/rmi-server/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180610-手写实现带注册中心的RPC框架/rmi-client/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180610-手写实现带注册中心的RPC框架/rmi-server/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180610-手写实现带注册中心的RPC框架/zookeeer-02/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180530-分布式系统的原理序列化和反序列化/serializer-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180704-分布式消息通信ActiveMQ(一)/activemq-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180704-分布式消息通信ActiveMQ(一)/acitivemq-receiver/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180609-分布式协调框架zookeeper实践1/zookeeper-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180613-揭开分布式服务治理Dubbo的神秘面纱/dubbo-client/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180613-揭开分布式服务治理Dubbo的神秘面纱/dubbo-master/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180613-揭开分布式服务治理Dubbo的神秘面纱/dubbo-master/dubbo-maven/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180613-揭开分布式服务治理Dubbo的神秘面纱/dubbo-server/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180621-分布式服务治理Dubbo配置级源码分析/MysqlDriver/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180621-分布式服务治理Dubbo配置级源码分析/dubbo-client/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180621-分布式服务治理Dubbo配置级源码分析/dubbo-server/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180621-分布式服务治理Dubbo配置级源码分析/OracleDriver/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180621-分布式服务治理Dubbo配置级源码分析/DataBaseDriver/pom.xml" />
+        <option value="$PROJECT_DIR$/mic-vip/2018/20180701-分布式session基于redis存储解决方案/session-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/dabai-vip/pom.xml" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-api/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-boot/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-core/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-tools/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-cacher/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-client/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-common/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-monitor/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-network/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/lion-registion/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/dabai-vip/20181031-初步认识IO及NIO代码/nettystudy/pom.xml" />
+        <option value="$PROJECT_DIR$/jvm-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-qrcode/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-crawler/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-jdbc-orm/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-es-search/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-spring-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-maven-plugin/core-common-doc/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-maven-plugin/core-maven-plugin-doc/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-maven-plugin/gupaoedu-maven-plugin-doc-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-mvcframework/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/public/gupaoedu-spring-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/Tom老师真实项目/3dsq-full/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-io/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-dubbo/gupaoedu-dubbo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-dubbo/gupaoedu-dubbo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-dubbo/gupaoedu-dubbo-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-dubbo/gupaoedu-dubbo-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-mongo/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-netty-rpc/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springaop/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-netty-chat/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-springjdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-transcation/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-mongo-morphia/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20170405/gupaoedu-vip-netty-catalina/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-mongo-orm/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-1.0/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-2.0/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-orm/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring5-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-mongo-morphia/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-mongo-explorer/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-mongo-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/jack-space/public/nettydemo/pom.xml" />
+        <option value="$PROJECT_DIR$/jack-space/public/gpconcurrent/pom.xml" />
+        <option value="$PROJECT_DIR$/jack-space/public/minidubbo-client/pom.xml" />
+        <option value="$PROJECT_DIR$/jack-space/public/minidubbo-server/pom.xml" />
+        <option value="$PROJECT_DIR$/gupao-plugin/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/pay/api/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/michael-public/pay/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/pay/provider/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/michael-public/user/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/公开课代码/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/公开课代码/chapter-1228/gupaoedu-token/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/公开课代码/michael-public/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/公开课代码/michael-public/chapter-1228/gupaoedu-token/pom.xml" />
+        <option value="$PROJECT_DIR$/michael-public/公开课代码/michael-public-2018/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/vip/rabbitmq-demo/springboot-rabbit/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/redis/redis-bloom-filter/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/poidemo/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/quartz-demo/spring-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/quartz-demo/quartz-standalone/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/quartz-demo/springboot-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/activemq-demo/activemqapi/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/activemq-demo/spring-activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/activemq-demo/springboot-activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/rabbitmq-demo/springboot-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/rabbitmq-demo/spring-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/rabbitmq-demo/rabbitmq-javaapi/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/elasticjob-demo/springboot-elasticjob/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/springboot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/qingshan-space/public/SpringBootMybatisDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/reactor/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/oop-design/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/vertx-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/jsp-in-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/java-i18n-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-boot-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/reactive-reactor/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/java9-module-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/servlet-in-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring5-test-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/study-source-code/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/java-resource-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/jsp-in-spring-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webflux-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-boot-velocity/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-xml-extension/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-boot-thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-cloud-bus-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/xiaomage-space/公开课/代码/spring-webmvc-autoconfig/pom.xml" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-biz/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-dal/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-web/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-generator/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-common-lib/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/gupao-remote-invoker/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupao-springmvc/pom.xml.versionsBackup" />
+        <option value="$PROJECT_DIR$/gupaoedu-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/gpmall-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/pay-service/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/gpmall-common/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/gpmall-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/gpmall-cashier/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/gpmall-activity/pom.xml" />
+        <option value="$PROJECT_DIR$/vip-project-space/activity-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8.0_77" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

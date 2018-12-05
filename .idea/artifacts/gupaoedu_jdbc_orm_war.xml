@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-jdbc-orm:war">
+    <output-path>$PROJECT_DIR$/tom-space/public/gupaoedu-jdbc-orm/target</output-path>
+    <root id="archive" name="gupaoedu-jdbc-orm.war">
+      <element id="artifact" artifact-name="gupaoedu-jdbc-orm:war exploded" />
+    </root>
+  </artifact>
+</component>

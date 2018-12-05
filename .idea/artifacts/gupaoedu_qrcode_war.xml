@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-qrcode:war">
+    <output-path>$PROJECT_DIR$/tom-space/public/gupaoedu-qrcode/target</output-path>
+    <root id="archive" name="gupaoedu-qrcode.war">
+      <element id="artifact" artifact-name="gupaoedu-qrcode:war exploded" />
+    </root>
+  </artifact>
+</component>

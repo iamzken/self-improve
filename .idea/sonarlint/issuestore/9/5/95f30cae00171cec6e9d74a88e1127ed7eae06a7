@@ -1,0 +1,15 @@
+
+gsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(³­‹ƒúÿÿÿÿ
+bsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(‘Ùæå
+bsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(æÖ‡Á
+gsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(¾Å›þÿÿÿÿ
+hsquid:CommentedOutCodeLineÏ"<This block of commented-out lines of code should be removed.(‘úÃÿøÿÿÿÿ
+?squid:S1481F"(Remove this unused "obj" local variable.(Þ›í³
+Ksquid:S1481º".Remove this unused "className" local variable.(®Ò¾¦ÿÿÿÿÿ
+dsquid:S00112Ú"FDefine and throw a dedicated exception instead of using a generic one.(ÿ«‹Âûÿÿÿÿ
+Nsquid:S1854F"7Remove this useless assignment to local variable "obj".(Þ›í³
+Zsquid:S1854º"=Remove this useless assignment to local variable "className".(®Ò¾¦ÿÿÿÿÿ
+?squid:S1148y"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+@squid:S1148©"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+@squid:S1148Ô"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+@squid:S1148Œ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

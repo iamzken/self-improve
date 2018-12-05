@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gpmall-sso:war">
+    <output-path>$PROJECT_DIR$/vip-project-space/gpmall-sso/target</output-path>
+    <root id="archive" name="gpmall-sso.war">
+      <element id="artifact" artifact-name="gpmall-sso:war exploded" />
+    </root>
+  </artifact>
+</component>

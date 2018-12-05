@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="gupaoedu-vip-spring-transaction:war">
+    <output-path>$PROJECT_DIR$/tom-space/vip-20180303/gupaoedu-vip-spring-transaction/target</output-path>
+    <root id="archive" name="gupaoedu-vip-spring-transaction.war">
+      <element id="artifact" artifact-name="gupaoedu-vip-spring-transaction:war exploded" />
+    </root>
+  </artifact>
+</component>
